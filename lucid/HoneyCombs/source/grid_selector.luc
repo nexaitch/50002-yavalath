@@ -1,6 +1,7 @@
 module grid_selector (
 
     // Module to select from 9*16 grid, for hexagon grid
+    // Mostly created to select rows for player 0, player 1 and selection occupancy grids (and because Lucid won't let us map directly easily)
     
     input select[4], // Bits to select row
     input grid[144], // Input grid

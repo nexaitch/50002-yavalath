@@ -9,7 +9,7 @@ module half_adder (
   ) {
 
   always {
-    s = a ^ b;
-    cout = a & b;
+    s = a ^ b; // s = a XOR b
+    cout = a & b; // cout = a AND b
   }
 }

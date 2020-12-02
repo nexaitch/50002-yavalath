@@ -1,28 +1,28 @@
 module au_top (
     input clk,              // 100MHz clock
-    input rst_n,            // reset button (active low)
+    input rst_n,            // reset button (active low) (disabled due to non-functioning button)
     input usb_rx,           // USB->Serial input
     output usb_tx,          // USB->Serial output
     
-    input joystick[4],
-    input button,
-    output row[9],
-    output column[2][9],
-    output turn[2],
-    output io_led[1][8]
-    //output debug[16],
-    //input debug_in[5]
+    input joystick[4], // joystick IO
+    input button, // (submit) button IO (usually high for some reason)
+    output row[9], // pins for row switching
+    output column[2][9], // pins for column
+    output turn[2] // pins to indicate player turn
+    // output io_led[1][8] // debugging IO
+    // output debug[16],
+    // input debug_in[5]
     
   ) {
   
   sig rst;                  // reset signal
   
-  //counter slowclock(.clk(clk),#SIZE(1),#DIV(27),.rst(rst));
-  prealpha prealpha(.clk(clk),.rst(rst));
-  //input_printer_grid_picker g(.rows(prealpha.rows),.column0(prealpha.player0),.column1(prealpha.player1),.select(debug_in));
+  prealpha prealpha(.clk(clk),.rst(rst)); // prealpha datapath
+  //counter slowclock(.clk(clk),#SIZE(1),#DIV(27),.rst(rst)); // slowclock for debugging
+  //input_printer_grid_picker g(.rows(prealpha.rows),.column0(prealpha.player0),.column1(prealpha.player1),.select(debug_in)); // output grid previewer for debugging
   
   
-  //uart_tx tx(#BAUD(1000000), #CLK_FREQ(100000000),.rst(rst),.clk(clk));
+  //uart_tx tx(#BAUD(1000000), #CLK_FREQ(100000000),.rst(rst),.clk(clk)); // attempted serial debugging
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -32,41 +32,27 @@ module au_top (
   
   always {
     
-    reset_cond.in = 1b0; // input raw inverted reset signal
+    reset_cond.in = 1b0; // input raw inverted reset signal (disabled due to non-functional reset buggon)
     rst = reset_cond.out;   // conditioned reset
     
     usb_tx = usb_rx;        // loop serial port
     
-    //tx.new_data = 1b1;
+    //tx.new_data = 1b1; // attempted debug via serial
     //tx.data = joystick;
     //tx.block = 1b0;
     //usb_tx = tx.tx;
     
-    //io_led[1][7:4] = prealpha.player1[6:3] & (4x{~(prealpha.rows[4])});
-    //io_led[1][3:0] = prealpha.player1[6:3] & (4x{~(prealpha.rows[3])});
-    //io_led[0][7:4] = prealpha.player0[6:3] & (4x{~(prealpha.rows[4])});
-    //io_led[0][3:0] = prealpha.player0[6:3] & (4x{~(prealpha.rows[3])});
+    prealpha.joystick = joystick; // connect joystick
+    prealpha.button = ~button; // connect button (active low)
+    row = prealpha.rows; // connect row pins
+    column[0] = prealpha.player0; // connect column pins (this one is red)
+    column[1] = prealpha.player1; // blue column pins
     
-    prealpha.joystick = joystick;
-    prealpha.button = ~button;
-    row = prealpha.rows;
-    column[0] = prealpha.player0;
-    column[1] = prealpha.player1;
+    turn = prealpha.turn; // connect turn pins (turn[1] for player 0, turn[0] for player 1)
     
-    turn = prealpha.turn;
-       
-    /*alu.a = 16h6AB3;
-    alu.b = 16h3;
-    alu.alufn = 6b100001;
-    io_led[1] = alu.out[15:8];
-    io_led[0] = alu.out[7:0];
-    row = 0;
-    column[1] = 0;
-    column[0] = 0;
-    turn = 0;*/
-    
+    // Debugging code, saved for convenience
     //debug[15:0] = prealpha.debug_read;
     //prealpha.debug_addr = debug_in;
-    io_led[0] = prealpha.debug_read;
+    //io_led[0] = prealpha.debug_read;
   }
 }

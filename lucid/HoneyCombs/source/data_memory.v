@@ -1,6 +1,8 @@
+// Data memory to store values for later use
 // Based on Alchitry's 2-port RAM. Read/write tested
 // Modified to:
 // - Include input-specific addresses (0,29) with input write/read interface
+// Note that word addressing is used
 
 module data_memory #(
     parameter SIZE = 16,                // Size of entry at each address
@@ -84,7 +86,10 @@ module data_memory #(
                                         mem[PLAYER1_START+3],mem[PLAYER1_START+2],mem[PLAYER1_START+1],mem[PLAYER1_START]}; // Assign player 1 occupancy grid
   assign selection_read[(9*SIZE)-1:0] = {mem[SELECTED_START+8],mem[SELECTED_START+7],mem[SELECTED_START+6],mem[SELECTED_START+5],mem[SELECTED_START+4],
                                         mem[SELECTED_START+3],mem[SELECTED_START+2],mem[SELECTED_START+1],mem[SELECTED_START]}; // Assign selected grid
+  
   assign turn_read = mem[TURN_ADDR][0]; // Assign turn read
+  
+  // Assign debug read
   //assign debug_read0 = mem[22];
   //assign debug_read1 = mem[23];
   //assign debug_read2 = mem[24];

@@ -2,12 +2,14 @@ module input_regulator #(
 
     // "Abstract" input regulator module used to provide somewhat regular inputs
     // Couple with a "mapper" module and extend to complete "concrete" module  
+    // How this works is that regulator writes stable input to memory directly, and upon this input being cleared from memory,
+    // counts down before rewriting/refreshing input in memory, unless input changes (in which case update is immediate)
     
-    INPUT_WIDTH = 1 : INPUT_WIDTH > 0,
-    DATA_WIDTH = 16 : DATA_WIDTH > 0,
-    PIPELINE_CYCLE_COUNT = 5 : PIPELINE_CYCLE_COUNT > 0, // Number of cycles to delay input signal for non-metastability
-    CONDITIONING_CYCLE_COUNT = 10000000 : CONDITIONING_CYCLE_COUNT > PIPELINE_CYCLE_COUNT, // Number of cycles for overall conditioning
-    INPUT_REFRESH_CYCLE_COUNT = 50000000 : INPUT_REFRESH_CYCLE_COUNT > 0, // Number of cycles for refresh
+    INPUT_WIDTH = 1 : INPUT_WIDTH > 0, // Raw input width
+    DATA_WIDTH = 16 : DATA_WIDTH > 0, // Architecture word width
+    PIPELINE_CYCLE_COUNT = 5 : PIPELINE_CYCLE_COUNT > 0, // Number of cycles to delay input signal for non-metastability, default amounting to 50ns
+    CONDITIONING_CYCLE_COUNT = 10000000 : CONDITIONING_CYCLE_COUNT > PIPELINE_CYCLE_COUNT, // Number of cycles for overall conditioning, default amounting to 0.1s
+    INPUT_REFRESH_CYCLE_COUNT = 50000000 : INPUT_REFRESH_CYCLE_COUNT > 0, // Number of cycles for refresh, default amounting to 0.5s
     INPUT_REFRESH_CYCLE_COUNT_OFFSET = INPUT_REFRESH_CYCLE_COUNT-1
     
   ) (
@@ -54,7 +56,7 @@ module input_regulator #(
     // counter.d+1 if mapper output is constant, and if input has been read (mapper output non-0 and counter is 0 and input read is 0) or counter is counting (mapper output non-0 but counter not 0 or max)
     // Implementing using latter logic
     
-    // To increment counter (s0==1), map_out must be non-zero,
+    // To increment counter (s0==1), as seen below in same order, map_out must be non-zero,
     // map_out is invariant and at least one of the following be satisfied:
     // Counter is 0 and input read is 0, or
     // Counter is non-0 and counter is non-max
@@ -73,7 +75,7 @@ module input_regulator #(
     // 0 otherwise (finally a very clean code)
     // Implementing using former logic
     
-    // To set input_write_enable, map_out==0
+    // To set input_write_enable, as seen below in same order, map_out==0
     // or map_out is non-constant
     // or counter is maxed
     input_write_enable = (~|(map_out))

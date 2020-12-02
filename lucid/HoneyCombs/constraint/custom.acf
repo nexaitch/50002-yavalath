@@ -4,9 +4,11 @@ pin clk CLOCK;
 clock clk 100MHz;
 
 // flip the Tx/Rx lines
+// Serial ports: previously attempted use for debugging
 pin usb_rx USB_TX;
 pin usb_tx USB_RX;
 
+// Row pins for LED GND - if high, LED does not light up for specific row
 pin row[8] A27;
 pin row[7] A28;
 pin row[6] A24;
@@ -17,6 +19,7 @@ pin row[2] A21;
 pin row[1] A20;
 pin row[0] A33;
 
+// Column pins for LED VDD - if low, LED does not light up for specific column
 pin column[0][0] C28;
 pin column[0][1] C27;
 pin column[0][2] C23;
@@ -37,29 +40,21 @@ pin column[1][6] C11;
 pin column[1][7] C12;
 pin column[1][8] C43;
 
+// Joystick pins
 pin joystick[1] C8 pulldown;
 pin joystick[2] C6 pulldown;
 pin joystick[3] C2 pulldown;
 pin joystick[0] C45 pulldown;
 
+// Pins to indicate player turn
 pin turn[1] A39;
 pin turn[0] A42;
 
-
-//pin io_led[0][0] B21;
-//pin io_led[0][1] B20;
-//pin io_led[0][2] B18;
-//pin io_led[0][3] B17;
-//pin io_led[0][4] B15;
-//pin io_led[0][5] B14;
-//pin io_led[0][6] B12;
-//pin io_led[0][7] B11;
-
-
+// External button pins (note that reset button is non-functioning)
 pin rst_n A45 pulldown;
 pin button A48 pulldown;
 
-
+// Debugging pins (mostly for convenience)
 //pin debug[15] B27;
 //pin debug[14] B30;
 //pin debug[13] B33;
@@ -91,15 +86,15 @@ pin button A48 pulldown;
 //pin debug_in[1] A5 pulldown;
 //pin debug_in[0] A2 pulldown;
 
-// IO section
-pin io_led[0][0] B21;
-pin io_led[0][1] B20;
-pin io_led[0][2] B18;
-pin io_led[0][3] B17;
-pin io_led[0][4] B15;
-pin io_led[0][5] B14;
-pin io_led[0][6] B12;
-pin io_led[0][7] B11;
+// IO LED section (for debugging)
+//pin io_led[0][0] B21;
+//pin io_led[0][1] B20;
+//pin io_led[0][2] B18;
+//pin io_led[0][3] B17;
+//pin io_led[0][4] B15;
+//pin io_led[0][5] B14;
+//pin io_led[0][6] B12;
+//pin io_led[0][7] B11;
 //pin io_led[1][0] B9;
 //pin io_led[1][1] B8;
 //pin io_led[1][2] B6;

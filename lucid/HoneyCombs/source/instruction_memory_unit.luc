@@ -1,6 +1,8 @@
 module instruction_memory_unit #(
 
-    // Instruction memory unit. Size 16, depth 2^9 = 512
+    // Instruction memory unit. Size 16, depth 2^9 = 512. Generated using BSIM and Python(TM)
+    // Note that word addressing is used
+    
     DEPTH_LOG = 9,
     INSTR = {
              16h0,

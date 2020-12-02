@@ -1,4 +1,7 @@
 module buffer (
+
+    // Literally a buffer (to serve as a mapper for a regulator module instance)
+    
     input in,
     output out
   ) {

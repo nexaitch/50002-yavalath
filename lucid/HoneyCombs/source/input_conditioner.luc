@@ -3,18 +3,18 @@ module input_conditioner #(
     // Multi-bit input conditioner, based on Alchitry's standard 1-bit button conditioner
     // It does the same thing, except that if input changes abruptly conditioner discards the input too
     
-    PIPELINE_CYCLE_COUNT = 5 : PIPELINE_CYCLE_COUNT > 0, // Number of cycles to delay input signal for non-metastability
-    CONDITIONING_CYCLE_COUNT = 10000000 : CONDITIONING_CYCLE_COUNT > PIPELINE_CYCLE_COUNT, // Number of cycles to delay input for both debouncing and stability
+    PIPELINE_CYCLE_COUNT = 5 : PIPELINE_CYCLE_COUNT > 0, // Number of cycles to delay input signal for non-metastability (default is 50 ns)
+    CONDITIONING_CYCLE_COUNT = 10000000 : CONDITIONING_CYCLE_COUNT > PIPELINE_CYCLE_COUNT, // Number of cycles to delay input for both debouncing and stability (default amounting to 0.1s)
     DEBOUNCING_CYCLE_COUNT = CONDITIONING_CYCLE_COUNT - PIPELINE_CYCLE_COUNT, // Number of cycles for strictly debouncing
     WIDTH = 1 : WIDTH > 0
     
   ) (
     input clk,  // clock
     input in[WIDTH], // signal input
-    output out[WIDTH], // signal output
-    output debug1[WIDTH],
-    output debug2[WIDTH],
-    output debug3[WIDTH]
+    output out[WIDTH] // signal output
+    //output debug1[WIDTH], // debugging outputs
+    //output debug2[WIDTH],
+    //output debug3[WIDTH]
   ) {
   
   input_pipeline pipeline[WIDTH](#DELAY_CYCLE_COUNT(PIPELINE_CYCLE_COUNT),.clk(clk)); // Pipeline to avoid metastability
@@ -61,8 +61,10 @@ module input_conditioner #(
     out_select.inp0 = WIDTHx{1b0};
     out_select.inp1 = input_tracker.q;
     out = out_select.out;
-    debug1 = pipeline.out;
-    debug2 = in;
-    debug3 = $clog2(DEBOUNCING_CYCLE_COUNT+1)x{~(|(counter.q ^ DEBOUNCING_CYCLE_COUNT))};
+    
+    // Debugging outputs
+    //debug1 = pipeline.out;
+    //debug2 = in;
+    //debug3 = $clog2(DEBOUNCING_CYCLE_COUNT+1)x{~(|(counter.q ^ DEBOUNCING_CYCLE_COUNT))};
   }
 }

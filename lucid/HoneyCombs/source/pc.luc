@@ -1,10 +1,13 @@
 module pc (
 
+    // Module for regulating and storing program counter
+    // Note that for this CPU we use word addressing
+
     input clk,  // clock
     input rst,  // reset
     input pcsel, // pcsel signal from CTL
     input c[9], // c constant for jumps
-    output ia[16]
+    output ia[16] // current program counter/instruction address
   ) {
   
   mux2 reset_mux[16](.s0(rst)); // mux to allow reset (esp at the start)

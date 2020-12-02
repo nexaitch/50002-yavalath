@@ -1,8 +1,10 @@
 module input_pipeline #(
+
     // Module to reduce metastability risk by forcing input to go through
     // a cascade of DELAY_CYCLE_COUNT dffs prior to being outputted
     // by this module. Based on pipeline.luc in library (but with comments)
-    DELAY_CYCLE_COUNT = 1 : DELAY_CYCLE_COUNT>0
+    
+    DELAY_CYCLE_COUNT = 1 : DELAY_CYCLE_COUNT>0 // Default is just 10ns delay
   )  (
     input clk,  // clock
     input in, // signal input

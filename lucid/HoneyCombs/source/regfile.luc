@@ -11,9 +11,9 @@ module regfile (
     input rc[3], // rc
     output rd1[16], // rd1
     output rd2[16], // rd2
-    output z, // z
-    output debug_r0[4],
-    output debug_r1[4]
+    output z // z
+    // output debug_r0[4], // R0 debugging display
+    // output debug_r1[4]  // R1 debugging display
     
   ) {
   
@@ -53,7 +53,8 @@ module regfile (
     // Output z
     z = ~|(rd2_select.out);
     
-    debug_r0 = base_reg.debug_r0[3:0];
-    debug_r1 = base_reg.debug_r1[3:0];
+    // Output R0 and R1 as debug
+    //debug_r0 = base_reg.debug_r0[3:0];
+    //debug_r1 = base_reg.debug_r1[3:0];
   }
 }

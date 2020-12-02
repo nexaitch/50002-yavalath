@@ -1,19 +1,24 @@
 module input_printer_grid_picker (
-    input rows[9],
-    input column0[9],
+
+    // Debugging module to display section of the grid to be displayed, given selecting inputs
+    
+    input rows[9], // Row pins
+    input column0[9], // Player 0/1 column pins
     input column1[9],
-    input select[5],
-    output reader[16]
+    input select[5], // Selector inputs
+    output reader[16] // Grid section output
   ) {
   
   mux2 column[9](.s0(select[4]));
 
   always {
-    reader[15:9] = 0;
-    column.inp0 = column0;
-    column.inp1 = column1;
+    reader[15:9] = 0; // Grid size is only 9, so zero higher bits
+    column.inp0 = column0; // Select player 0 grid if selector MSB is low
+    column.inp1 = column1; // Player 1 grid if selector LSB is high
+    
+    // Select selected grid's section using the 4 lowest selector bits
     case (select[3:0]){
-      0:
+        0:
         
         reader[8:0] = column.out & c{9x{~rows[0]}};
         1:

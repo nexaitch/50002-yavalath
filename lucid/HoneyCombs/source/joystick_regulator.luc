@@ -1,6 +1,6 @@
 module joystick_regulator (
   
-    // Module to regulate joystick input. Allows for refreshing
+    // Module to regulate joystick input. Allows for refreshing (default 0.5s after reading)
     
     input in[4], // Joystick input
     input input_read[16],

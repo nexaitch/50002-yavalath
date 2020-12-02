@@ -1,8 +1,11 @@
 module input_printer #(
+
+    // Module to print player 0, player 1 occupancy and selection grids
+    // Eseentially printing is done by rapidly iterating through all rows
     
-    GRID_SIZE = 9 : GRID_SIZE > 1,
-    SPEED = 10 : SPEED > 0,
-    BLINK_SPEED = 27 : BLINK_SPEED > 0
+    GRID_SIZE = 9 : GRID_SIZE > 1, // Number of rows in each grid
+    SPEED = 10 : SPEED > 0, // Logarithm of relative time period with which to iterate between rows, currently time period is 2^10/100M s
+    BLINK_SPEED = 27 : BLINK_SPEED > 0 // Logarithm of relative time period with which to cause blinking of selected hexagon, currently time period is abt 1.34s
     
   ) (
     input clk,  // clock
@@ -14,13 +17,13 @@ module input_printer #(
     output column1[GRID_SIZE] // second player (blue?)
   ) {
   
-  counter slowclock(.rst(1b0),.clk(clk),#DIV(SPEED),#SIZE(1));
-  counter blink_slowclock(.rst(1b0),.clk(clk),#DIV(BLINK_SPEED),#SIZE(1));
-  dff row_iterator[$clog2(GRID_SIZE)](.clk(slowclock.value));
-  mux2 row_iterator_change[$clog2(GRID_SIZE)];
-  grid_selector player0_occupancy_select(.select(row_iterator.q),.grid(player0_occupancy));
-  grid_selector player1_occupancy_select(.select(row_iterator.q),.grid(player1_occupancy));
-  grid_selector selection_occupancy_select(.select(row_iterator.q),.grid(selection_occupancy));
+  counter slowclock(.rst(1b0),.clk(clk),#DIV(SPEED),#SIZE(1)); // Slowclock for row iteration
+  counter blink_slowclock(.rst(1b0),.clk(clk),#DIV(BLINK_SPEED),#SIZE(1)); // Slowclock for blinking of selected hexagon
+  dff row_iterator[$clog2(GRID_SIZE)](.clk(slowclock.value)); // Counter to track current row
+  mux2 row_iterator_change[$clog2(GRID_SIZE)]; // Mux to select next value for row counter
+  grid_selector player0_occupancy_select(.select(row_iterator.q),.grid(player0_occupancy)); // Selector for player 0 grid (mux but with case statements)
+  grid_selector player1_occupancy_select(.select(row_iterator.q),.grid(player1_occupancy)); // For player 1 grid
+  grid_selector selection_occupancy_select(.select(row_iterator.q),.grid(selection_occupancy)); // For selection grid
   
   always {
     // Select next iterator value
@@ -33,8 +36,6 @@ module input_printer #(
     row = ~(1 << row_iterator.q);
     
     // Output columns
-    //player0_occupancy_select.out | (
-    //& (GRID_SIZEx{blink_slowclock.value}))
     column0 = player0_occupancy_select.out[8:0] | (selection_occupancy_select.out[8:0] & (GRID_SIZEx{blink_slowclock.value}));
     column1 = player1_occupancy_select.out[8:0] | (selection_occupancy_select.out[8:0] & (GRID_SIZEx{blink_slowclock.value}));
     

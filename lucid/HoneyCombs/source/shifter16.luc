@@ -10,9 +10,9 @@ module shifter16 (
     
   ) {
   
-  mux2 reverse_a_first[16](.s0(alufn[5])); // Create muxes to reverse a for left shift prior to variable shifting, assigning b[31] to indicate left/right shift
+  mux2 reverse_a_first[16](.s0(alufn[5])); // Create muxes to reverse a for left shift prior to variable shifting, assigning alufn[5] to indicate left/right shift
   mux2 cascade_shifter[4][16]; // Create sets of 16 muxes to perform cascade shifting (shift by 1, then by 2, then by 4, then by 8)
-  mux2 reverse_a_last[16](.s0(alufn[5])); // Create muxes to reverse result for left shift after variable shifting, assigning b[31] to indicate left/right shift
+  mux2 reverse_a_last[16](.s0(alufn[5])); // Create muxes to reverse result for left shift after variable shifting, assigning alufn[5] to indicate left/right shift
   
   sig shift_fill;
   

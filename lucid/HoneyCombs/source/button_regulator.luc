@@ -1,6 +1,6 @@
 module button_regulator (
 
-    // Button regulator. Allows for refreshing
+    // (Submit) button regulator. Allows for refreshing (abt 0.5s to refresh)
     
     input clk,  // clock
     input in, // raw button input
@@ -9,8 +9,8 @@ module button_regulator (
     output out[16] // Input write data
   ) {
   
-  input_regulator regulator(.clk(clk));
-  buffer map;
+  input_regulator regulator(.clk(clk)); // Abstract input regulators
+  buffer map; // Yes, a buffer for a mapper
 
   always {
   

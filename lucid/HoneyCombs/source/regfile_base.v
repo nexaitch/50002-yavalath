@@ -18,10 +18,10 @@ module regfile_base #(
     
     // regular read interface 1
     input [$clog2(DEPTH)-1:0] raddr1,   // read address (of size log(DEPTH))
-    output [SIZE-1:0] read_data1,    // read data (of size SIZE)
+    output [SIZE-1:0] read_data1    // read data (of size SIZE)
     
-    output [SIZE-1:0] debug_r0,
-    output [SIZE-1:0] debug_r1
+    //output [SIZE-1:0] debug_r0,         // output r0 for debugging
+    //output [SIZE-1:0] debug_r1          // output r1 for debugging
   );
   
   reg [SIZE-1:0] mem [DEPTH-1:0];      // memory array to store values
@@ -37,7 +37,7 @@ module regfile_base #(
   
   assign read_data0 = mem[raddr0];       // read memory directly from memory array (I suppose a mux is implemented in background)
   assign read_data1 = mem[raddr1];
-  assign debug_r0 = mem[0];
-  assign debug_r1 = mem[1];
+  //assign debug_r0 = mem[0]; // Read r0 and r1 for debugging
+  //assign debug_r1 = mem[1];
   
 endmodule

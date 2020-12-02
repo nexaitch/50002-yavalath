@@ -1,7 +1,7 @@
 module prealpha (
 
     // Main Prealpha datapath. Outputs go to au_top and can be used for debugging
-    // IO: 5 inputs, 28 outputs
+    // IO: 6 inputs, 29 outputs
     
     input clk,  // clock
     input rst,  // reset
@@ -10,28 +10,25 @@ module prealpha (
     output rows[9], // y axis: MSB for highest
     output player0[9], // player 1 grid: x axis: MSB for highest
     output player1[9], // player 2 grid: x axis: MSB for highest
-    output turn[2], // turn LED
-    output debug_read[8]
-    //output pc_read[16]
+    output turn[2] // turn LED
+    // output debug_read[8] // debugging output
   ) {
   
   // Main components
-  pc pc(.clk(clk),.rst(rst));
-  control_unit ctl(.rst(rst));
-  instruction_memory_unit instr_mem_unit;
-  regfile regfile(.clk(clk));
-  data_memory data_memory(.clk(clk));
-  alu alu;
-  joystick_regulator joystick_regulator(.clk(clk));
-  button_regulator button_regulator(.clk(clk));
-  input_printer input_printer(.clk(clk));
+  pc pc(.clk(clk),.rst(rst)); // PC module
+  control_unit ctl(.rst(rst)); // CU module
+  instruction_memory_unit instr_mem_unit; // Instruction memory
+  regfile regfile(.clk(clk)); // Regfile
+  data_memory data_memory(.clk(clk)); // Data memory
+  alu alu; // ALU
+  joystick_regulator joystick_regulator(.clk(clk)); // Joystick input handler/regulator
+  button_regulator button_regulator(.clk(clk)); // Submit button input handler/regulator
+  input_printer input_printer(.clk(clk)); // Grid printer
   
-  mux2 bsel_mux[16];
-  mux2 wdsel_mux[16];
+  mux2 bsel_mux[16]; // BSEL mux
+  mux2 wdsel_mux[16]; // WDSEL mux
 
   always {
-  
-    
     
     // Assign pc signals
     pc.pcsel = ctl.pcsel;
@@ -90,9 +87,7 @@ module prealpha (
     
     // Assign input printer signals
     input_printer.player0_occupancy = data_memory.player0_read;
-    
     input_printer.player1_occupancy = data_memory.player1_read;
-    
     input_printer.selection_occupancy = data_memory.selection_read;
     
     // Assign outputs
@@ -101,10 +96,9 @@ module prealpha (
     player1 = input_printer.column1;
     turn[1] = ~data_memory.turn_read;
     turn[0] = data_memory.turn_read;
-    //pc_read = pc.ia;
-    //debug_read[15:8] = 0;
-    debug_read[7:4] = regfile.debug_r0;
-    debug_read[3:0] = regfile.debug_r1;
+    // Output debugging outputs
+    //debug_read[7:4] = regfile.debug_r0;
+    //debug_read[3:0] = regfile.debug_r1;
     
   }
 }

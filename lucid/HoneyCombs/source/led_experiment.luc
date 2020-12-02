@@ -1,25 +1,28 @@
 module led_experiment #(
+
+    // Debugging proof-of-concept module to test idea of rapidly iterating through rows to light up entire grid
+    
     RO = {4b1000,
           4b0100,
           4b0010,
-          4b0001},
+          4b0001}, // Row pins (to VDD pin for LED)
     CO = {4b0111,
           4b1000,
           4b1010,
-          4b0101}
+          4b0101} // Column pins (to ground pin for LED)
   ) (
     input clk,  // clock
-    output rows[4],
+    output rows[4], // outputs
     output columns[4]
   ) {
   
-  dff row[2](.clk(clk));
+  dff row[2](.clk(clk)); // dffs to iterate through rows/columns
   dff column[2](.clk(clk));
 
   always {
-    rows = RO[row.q];
+    rows = RO[row.q]; // Output relevant RO/CO entry
     columns = CO[column.q];
-    column.d = column.q + 1;
+    column.d = column.q + 1; // Increment dff values
     row.d = row.q + 1;
   }
 }
