@@ -1,0 +1,52 @@
+module adder16 (
+    
+    // 16-bit adder. This version only allows addition
+
+    input a[16], // Operand a
+    input b[16], // Operand b
+    output s[16], // Addition result
+    output z, // Bit for whether all s bits are 0
+    output v, // Overflow bit
+    output n // Negative number bit (basically s[31])
+  ) {
+  
+  sig cout[16], // Stores carry-out outputs
+      s_int[16]; // Intermediate location to store results of s
+  
+  // fa0 to calculate s's LSB
+  full_adder fa0;
+  
+  // fa1 to calculate the rest of s
+  full_adder fa1[15];
+  
+  always {
+    
+    // fa0 to process least significant bit of s output
+    fa0.a = a[0];
+    fa0.b = b[0];
+    fa0.cin = 1b0;
+    s_int[0] = fa0.s;
+    cout[0] = fa0.cout;
+    
+    // fa1 to process all other bits of s output
+    fa1.a = a[15:1];
+    fa1.b = b[15:1];
+    s_int[15:1] = fa1.s;
+    cout[15:1] = fa1.cout;
+    fa1.cin = cout[14:0];
+    
+    // Connect s_int to s
+    s = s_int;
+    
+    // Take z as negation of (OR among all bits of s)
+    z = ~(s_int[0] | s_int[1] | s_int[2] | s_int[3] | s_int[4] | s_int[5] | s_int[6] | s_int[7]
+      | s_int[8] | s_int[9] | s_int[10] | s_int[11] | s_int[12] | s_int[13] | s_int[14] | s_int[15]);
+    
+    // Take v as ((a[15] AND b[15] AND !s[15]) OR (!a[15] AND !b[15] AND s[15]))
+    v = (a[15] & b[15] & (~s_int[15])) | ((~a[15]) & (~b[15]) & s_int[15]);
+    
+    // n is just the MSB of s
+    n = s_int[15];
+    
+  }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HoneyCombs" board="Alchitry Au" language="Lucid" version="3">
+  <files>
+    <src>regfile_base.v</src>
+    <src>pc.luc</src>
+    <src>input_conditioner.luc</src>
+    <component>counter.luc</component>
+    <src>and16.luc</src>
+    <src>control_unit.luc</src>
+    <src>adder16.luc</src>
+    <src>joystick_mapper.luc</src>
+    <src>input_printer_grid_picker.luc</src>
+    <src>shifter16.luc</src>
+    <src>prealpha.luc</src>
+    <component>reset_conditioner.luc</component>
+    <src>mux4.luc</src>
+    <src>input_printer.luc</src>
+    <src>buffer.luc</src>
+    <src>half_adder.luc</src>
+    <src>led_experiment.luc</src>
+    <src>full_adder.luc</src>
+    <src>instruction_memory_unit.luc</src>
+    <src>pc_incrementer_16.luc</src>
+    <src>input_regulator.luc</src>
+    <src>grid_selector.luc</src>
+    <src>joystick_regulator.luc</src>
+    <src>button_regulator.luc</src>
+    <src top="true">au_top.luc</src>
+    <src>alu.luc</src>
+    <component>uart_tx.luc</component>
+    <src>data_memory.v</src>
+    <src>regfile.luc</src>
+    <src>mux2.luc</src>
+    <src>input_pipeline.luc</src>
+    <constraint>custom.acf</constraint>
+    <constraint>custom.xdc</constraint>
+  </files>
+</project>

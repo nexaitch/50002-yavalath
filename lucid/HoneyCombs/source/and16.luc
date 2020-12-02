@@ -1,0 +1,23 @@
+module and16 (
+
+    // Bitwise AND module (it be like the bitwise boolean one but the answer is hardcoded)
+    
+    input a[16], // Input a
+    input b[16], // Input b
+    output bool[16] // Output
+    
+  ) {
+    
+    // Create 16 muxes for each bit, feeding the truth table as the inputs
+    mux4 bool_mux[16](.inp0(1b0), .inp1(1b0), .inp2(1b0), .inp3(1b1));
+  
+  always {
+    
+    // Assign bits of a and b as selectors of the muxes
+    bool_mux.s0 = a;
+    bool_mux.s1 = b;
+		  
+    // Assign output of the muxes to bool
+    bool = bool_mux.out;
+  }
+}

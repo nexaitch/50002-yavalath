@@ -1,0 +1,90 @@
+module shifter16 (
+
+    // Bitwise shifter module. Only logically shifts left (alufn[5]==0) or right(alufn[5]==1).
+    // Which direction to shift to depends on alufn's MSB.
+    
+    input alufn[6], // ALUFN
+    input a[16], // Input a
+    input b[16], // Shift amount, only b[3:0] is relevant
+    output shift[16] // Shift result
+    
+  ) {
+  
+  mux2 reverse_a_first[16](.s0(alufn[5])); // Create muxes to reverse a for left shift prior to variable shifting, assigning b[31] to indicate left/right shift
+  mux2 cascade_shifter[4][16]; // Create sets of 16 muxes to perform cascade shifting (shift by 1, then by 2, then by 4, then by 8)
+  mux2 reverse_a_last[16](.s0(alufn[5])); // Create muxes to reverse result for left shift after variable shifting, assigning b[31] to indicate left/right shift
+  
+  sig shift_fill;
+  
+  always {
+    
+    // Fill vacated positions with 0 only (mostly a legacy variable from the old shifter, really)
+    shift_fill = 1b0;
+    
+    // Reverse a if b[15]==0
+    reverse_a_first.inp0[0] = a[15];
+    reverse_a_first.inp0[1] = a[14];
+    reverse_a_first.inp0[2] = a[13];
+    reverse_a_first.inp0[3] = a[12];
+    reverse_a_first.inp0[4] = a[11];
+    reverse_a_first.inp0[5] = a[10];
+    reverse_a_first.inp0[6] = a[9];
+    reverse_a_first.inp0[7] = a[8];
+    reverse_a_first.inp0[8] = a[7];
+    reverse_a_first.inp0[9] = a[6];
+    reverse_a_first.inp0[10] = a[5];
+    reverse_a_first.inp0[11] = a[4];
+    reverse_a_first.inp0[12] = a[3];
+    reverse_a_first.inp0[13] = a[2];
+    reverse_a_first.inp0[14] = a[1];
+    reverse_a_first.inp0[15] = a[0];
+
+    reverse_a_first.inp1 = a;
+    
+    // First shift: shift by 1
+    cascade_shifter.s0[0] = 16x{b[0]};
+    cascade_shifter.inp0[0] = reverse_a_first.out;
+    cascade_shifter.inp1[0][15] = shift_fill;
+    cascade_shifter.inp1[0][14:0] = reverse_a_first.out[15:1];
+    
+    // Second shift: shift by 2
+    cascade_shifter.s0[1] = 16x{b[1]};
+    cascade_shifter.inp0[1] = cascade_shifter.out[0];
+    cascade_shifter.inp1[1][15:14] = 2x{shift_fill};
+    cascade_shifter.inp1[1][13:0] = cascade_shifter.out[0][15:2];
+    
+    // Third shift: shift by 4
+    cascade_shifter.s0[2] = 16x{b[2]};
+    cascade_shifter.inp0[2] = cascade_shifter.out[1];
+    cascade_shifter.inp1[2][15:12] = 4x{shift_fill};
+    cascade_shifter.inp1[2][11:0] = cascade_shifter.out[1][15:4];
+    
+    // Fourth shift: shift by 8
+    cascade_shifter.s0[3] = 16x{b[3]};
+    cascade_shifter.inp0[3] = cascade_shifter.out[2];
+    cascade_shifter.inp1[3][15:8] = 8x{shift_fill};
+    cascade_shifter.inp1[3][7:0] = cascade_shifter.out[2][15:8];
+    
+    // Reverse result if b[15]==0
+    reverse_a_last.inp0[0] = cascade_shifter.out[3][15];
+    reverse_a_last.inp0[1] = cascade_shifter.out[3][14];
+    reverse_a_last.inp0[2] = cascade_shifter.out[3][13];
+    reverse_a_last.inp0[3] = cascade_shifter.out[3][12];
+    reverse_a_last.inp0[4] = cascade_shifter.out[3][11];
+    reverse_a_last.inp0[5] = cascade_shifter.out[3][10];
+    reverse_a_last.inp0[6] = cascade_shifter.out[3][9];
+    reverse_a_last.inp0[7] = cascade_shifter.out[3][8];
+    reverse_a_last.inp0[8] = cascade_shifter.out[3][7];
+    reverse_a_last.inp0[9] = cascade_shifter.out[3][6];
+    reverse_a_last.inp0[10] = cascade_shifter.out[3][5];
+    reverse_a_last.inp0[11] = cascade_shifter.out[3][4];
+    reverse_a_last.inp0[12] = cascade_shifter.out[3][3];
+    reverse_a_last.inp0[13] = cascade_shifter.out[3][2];
+    reverse_a_last.inp0[14] = cascade_shifter.out[3][1];
+    reverse_a_last.inp0[15] = cascade_shifter.out[3][0];
+    reverse_a_last.inp1 = cascade_shifter.out[3];
+    
+    // Return result
+    shift = reverse_a_last.out;
+  }
+}

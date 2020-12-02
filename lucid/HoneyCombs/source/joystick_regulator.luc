@@ -1,0 +1,23 @@
+module joystick_regulator (
+  
+    // Module to regulate joystick input. Allows for refreshing
+    
+    input in[4], // Joystick input
+    input input_read[16],
+    input clk, // Clock
+    output write_en, // Input write enable
+    output out[16] // Input write data
+  ) {
+  
+  input_regulator regulator(#INPUT_WIDTH(4),.clk(clk)); // Abstract regulator
+  joystick_mapper mapper; // Mapper for joystick
+
+  always {
+    regulator.inp = in; // Feed raw input to regulator
+    mapper.map_in = regulator.map_inp; // Feed input to mapper
+    regulator.map_out = mapper.map_out; // Feed mapper output to regulator
+    regulator.input_read = input_read; // Feed memory read to regulator
+    write_en = regulator.input_write_enable; // Output write enable bit
+    out = regulator.input_write_data; //  Output regulator write data
+  }
+}

@@ -1,0 +1,68 @@
+module input_conditioner #(
+
+    // Multi-bit input conditioner, based on Alchitry's standard 1-bit button conditioner
+    // It does the same thing, except that if input changes abruptly conditioner discards the input too
+    
+    PIPELINE_CYCLE_COUNT = 5 : PIPELINE_CYCLE_COUNT > 0, // Number of cycles to delay input signal for non-metastability
+    CONDITIONING_CYCLE_COUNT = 10000000 : CONDITIONING_CYCLE_COUNT > PIPELINE_CYCLE_COUNT, // Number of cycles to delay input for both debouncing and stability
+    DEBOUNCING_CYCLE_COUNT = CONDITIONING_CYCLE_COUNT - PIPELINE_CYCLE_COUNT, // Number of cycles for strictly debouncing
+    WIDTH = 1 : WIDTH > 0
+    
+  ) (
+    input clk,  // clock
+    input in[WIDTH], // signal input
+    output out[WIDTH], // signal output
+    output debug1[WIDTH],
+    output debug2[WIDTH],
+    output debug3[WIDTH]
+  ) {
+  
+  input_pipeline pipeline[WIDTH](#DELAY_CYCLE_COUNT(PIPELINE_CYCLE_COUNT),.clk(clk)); // Pipeline to avoid metastability
+  dff counter[$clog2(DEBOUNCING_CYCLE_COUNT+1)](.clk(clk)); // Counter for tracking number of cycles
+  dff input_tracker[WIDTH](.clk(clk));
+  mux2 counter_select[$clog2(DEBOUNCING_CYCLE_COUNT+1)](.inp1(0)); // Mux to select between case in which there is the same input (s0),
+                                                                                   // and there isn't the same input or there is 0 (s1)
+                                                                                   // in which case counter resets to 0
+  half_adder counter_incrementer[$clog2(DEBOUNCING_CYCLE_COUNT+1)]; // Half-adder to add counter
+  mux2 out_select[WIDTH];
+  var i; // Variable to direct half-adder inputs/outputs
+  
+  always {
+    
+    // Route input to pipeline
+    pipeline.in = in;
+    
+    // Assign current counter value to incrementer input
+    counter_incrementer.a = counter.q; 
+    
+    // Add 1 to counter only if counter is non-max
+    counter_incrementer.b[0] = |(counter.q^(DEBOUNCING_CYCLE_COUNT));
+    for (i=1;i<$clog2(DEBOUNCING_CYCLE_COUNT+1);i++){
+      counter_incrementer.b[i] = counter_incrementer.cout[i-1];
+    }
+    
+    // Assign incremented counter to incrementer input
+    counter_select.inp0 = counter_incrementer.s;
+    
+    // Route pipeline output to input tracker input
+    input_tracker.d = pipeline.out;
+    
+    // Check if pipeline output is 0 or doesnt match input tracker, in which case we reset counter
+    // Counter resets occurs when pipeline.out is 0 (checked using NOR) or input doesn't match tracker (checked using OR and XOR)
+    counter_select.s0 = $clog2(DEBOUNCING_CYCLE_COUNT+1)x{(~|pipeline.out)|(|(pipeline.out^input_tracker.q))};
+    
+    // Assign new value of counter to counter register
+    counter.d = counter_select.out;
+    
+    // out is the input tracker output only once counter reaches DEBOUNCING_CYCLE_COUNT
+    // This is expressed using NOR(counter XOR DEBOUNCING_CYCLE_COUNT) for the counter check,
+    // and a mux to select the output value
+    out_select.s0 =  $clog2(DEBOUNCING_CYCLE_COUNT+1)x{~(|(counter.q ^ DEBOUNCING_CYCLE_COUNT))};
+    out_select.inp0 = WIDTHx{1b0};
+    out_select.inp1 = input_tracker.q;
+    out = out_select.out;
+    debug1 = pipeline.out;
+    debug2 = in;
+    debug3 = $clog2(DEBOUNCING_CYCLE_COUNT+1)x{~(|(counter.q ^ DEBOUNCING_CYCLE_COUNT))};
+  }
+}

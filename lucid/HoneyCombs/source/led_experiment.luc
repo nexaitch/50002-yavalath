@@ -1,0 +1,25 @@
+module led_experiment #(
+    RO = {4b1000,
+          4b0100,
+          4b0010,
+          4b0001},
+    CO = {4b0111,
+          4b1000,
+          4b1010,
+          4b0101}
+  ) (
+    input clk,  // clock
+    output rows[4],
+    output columns[4]
+  ) {
+  
+  dff row[2](.clk(clk));
+  dff column[2](.clk(clk));
+
+  always {
+    rows = RO[row.q];
+    columns = CO[column.q];
+    column.d = column.q + 1;
+    row.d = row.q + 1;
+  }
+}

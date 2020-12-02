@@ -1,0 +1,110 @@
+module prealpha (
+
+    // Main Prealpha datapath. Outputs go to au_top and can be used for debugging
+    // IO: 5 inputs, 28 outputs
+    
+    input clk,  // clock
+    input rst,  // reset
+    input joystick[4], // joystick, in WSEN
+    input button, // button
+    output rows[9], // y axis: MSB for highest
+    output player0[9], // player 1 grid: x axis: MSB for highest
+    output player1[9], // player 2 grid: x axis: MSB for highest
+    output turn[2], // turn LED
+    output debug_read[8]
+    //output pc_read[16]
+  ) {
+  
+  // Main components
+  pc pc(.clk(clk),.rst(rst));
+  control_unit ctl(.rst(rst));
+  instruction_memory_unit instr_mem_unit;
+  regfile regfile(.clk(clk));
+  data_memory data_memory(.clk(clk));
+  alu alu;
+  joystick_regulator joystick_regulator(.clk(clk));
+  button_regulator button_regulator(.clk(clk));
+  input_printer input_printer(.clk(clk));
+  
+  mux2 bsel_mux[16];
+  mux2 wdsel_mux[16];
+
+  always {
+  
+    
+    
+    // Assign pc signals
+    pc.pcsel = ctl.pcsel;
+    pc.c = instr_mem_unit.id[8:0];
+    
+    // Assign ctl signals
+    ctl.opcode = instr_mem_unit.id[15:12];
+    ctl.z = regfile.z;
+    
+    // Assign instruction memory unit signals
+    instr_mem_unit.ia = pc.ia[8:0];
+    
+    // Assign regfile signals
+    regfile.werf = ctl.werf;
+    regfile.ra2sel = ctl.ra2sel;
+    regfile.ra = instr_mem_unit.id[8:6];
+    regfile.rb = instr_mem_unit.id[5:3];
+    regfile.rc = instr_mem_unit.id[11:9];
+    regfile.write_data = wdsel_mux.out;
+    
+    // Assign data memory signals
+    data_memory.write_en = ctl.wr;
+    data_memory.waddr = alu.out[5:0];
+    data_memory.write_data = regfile.rd2;
+    data_memory.raddr = alu.out[5:0];
+    data_memory.input0_write_en = joystick_regulator.write_en;
+    data_memory.input0_write_data = joystick_regulator.out;
+    data_memory.input1_write_en = button_regulator.write_en;
+    data_memory.input1_write_data = button_regulator.out;
+    //data_memory.debug_addr = debug_addr;
+    //debug_read = data_memory.debug_read;
+
+    // Assign ALU signals
+    alu.a = regfile.rd1;
+    alu.b = bsel_mux.out;
+    alu.alufn = ctl.alufn;
+    
+    // Assign bsel_mux signals
+    bsel_mux.s0 = 16x{ctl.bsel};
+    bsel_mux.inp0 = regfile.rd2;
+    bsel_mux.inp1[15:6] = 10x{instr_mem_unit.id[5]};
+    bsel_mux.inp1[5:0] = instr_mem_unit.id[5:0];
+    
+    // Assign wdsel_mux signals
+    wdsel_mux.s0 = 16x{ctl.wdsel};
+    wdsel_mux.inp0 = alu.out;
+    wdsel_mux.inp1 = data_memory.read_data;
+    
+    // Assign joystick regulator signals
+    joystick_regulator.input_read = data_memory.input0_read_data;
+    joystick_regulator.in = joystick;
+    
+    // Assign button regulator signals
+    button_regulator.input_read = data_memory.input1_read_data;
+    button_regulator.in = button;
+    
+    // Assign input printer signals
+    input_printer.player0_occupancy = data_memory.player0_read;
+    
+    input_printer.player1_occupancy = data_memory.player1_read;
+    
+    input_printer.selection_occupancy = data_memory.selection_read;
+    
+    // Assign outputs
+    rows = input_printer.row;
+    player0 = input_printer.column0;
+    player1 = input_printer.column1;
+    turn[1] = ~data_memory.turn_read;
+    turn[0] = data_memory.turn_read;
+    //pc_read = pc.ia;
+    //debug_read[15:8] = 0;
+    debug_read[7:4] = regfile.debug_r0;
+    debug_read[3:0] = regfile.debug_r1;
+    
+  }
+}

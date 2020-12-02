@@ -1,0 +1,29 @@
+module joystick_mapper #(
+
+    // Mapper from joystick inputs to (x,y) change in 16 bits
+    
+    MAP = {16b0, // 1111
+           16b0, // 1110
+           16b0, // 1101
+           16b1101, // 1100 (dir 1)
+           16b0, // 1011
+           16b0, // 1010
+           16b1111, // 1001 (dir 7)
+           16b1110, // 1000 (dir 0)
+           16b0, // 0111
+           16b0101, // 0110 (dir 3)
+           16b0, // 0101
+           16b0, // 0100 (dir 2)
+           16b0111, // 0011 (dir 5)
+           16b0110, // 0010 (dir 4)
+           16b0, // 0001 (dir 6)
+           16b0} // 0000
+  ) (
+    input map_in[4],
+    output map_out[16]
+  ) {
+
+  always {
+    map_out = MAP[map_in];
+  }
+}

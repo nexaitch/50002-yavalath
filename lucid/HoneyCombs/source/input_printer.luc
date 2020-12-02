@@ -1,0 +1,42 @@
+module input_printer #(
+    
+    GRID_SIZE = 9 : GRID_SIZE > 1,
+    SPEED = 10 : SPEED > 0,
+    BLINK_SPEED = 27 : BLINK_SPEED > 0
+    
+  ) (
+    input clk,  // clock
+    input player0_occupancy[GRID_SIZE*16], // the occupancy grid for player 1
+    input player1_occupancy[GRID_SIZE*16], // the occupancy grid for player 2
+    input selection_occupancy[GRID_SIZE*16], // the selection grid
+    output row[GRID_SIZE], // the different rows
+    output column0[GRID_SIZE], // first player (red?)
+    output column1[GRID_SIZE] // second player (blue?)
+  ) {
+  
+  counter slowclock(.rst(1b0),.clk(clk),#DIV(SPEED),#SIZE(1));
+  counter blink_slowclock(.rst(1b0),.clk(clk),#DIV(BLINK_SPEED),#SIZE(1));
+  dff row_iterator[$clog2(GRID_SIZE)](.clk(slowclock.value));
+  mux2 row_iterator_change[$clog2(GRID_SIZE)];
+  grid_selector player0_occupancy_select(.select(row_iterator.q),.grid(player0_occupancy));
+  grid_selector player1_occupancy_select(.select(row_iterator.q),.grid(player1_occupancy));
+  grid_selector selection_occupancy_select(.select(row_iterator.q),.grid(selection_occupancy));
+  
+  always {
+    // Select next iterator value
+    row_iterator_change.s0 = $clog2(GRID_SIZE)x{~|(row_iterator.q^(GRID_SIZE-1))};
+    row_iterator_change.inp0 = row_iterator.q+1;
+    row_iterator_change.inp1 = $clog2(GRID_SIZE)x{1b0};
+    row_iterator.d = row_iterator_change.out;
+    
+    // Output row
+    row = ~(1 << row_iterator.q);
+    
+    // Output columns
+    //player0_occupancy_select.out | (
+    //& (GRID_SIZEx{blink_slowclock.value}))
+    column0 = player0_occupancy_select.out[8:0] | (selection_occupancy_select.out[8:0] & (GRID_SIZEx{blink_slowclock.value}));
+    column1 = player1_occupancy_select.out[8:0] | (selection_occupancy_select.out[8:0] & (GRID_SIZEx{blink_slowclock.value}));
+    
+  }
+}

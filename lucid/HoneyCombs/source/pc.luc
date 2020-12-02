@@ -1,0 +1,44 @@
+module pc (
+
+    input clk,  // clock
+    input rst,  // reset
+    input pcsel, // pcsel signal from CTL
+    input c[9], // c constant for jumps
+    output ia[16]
+  ) {
+  
+  mux2 reset_mux[16](.s0(rst)); // mux to allow reset (esp at the start)
+  mux2 pc_select[16](.s0(pcsel)); // mux to select based on pcsel
+  dff pc_reg[16](.clk(clk)); // dff to store pc value
+  pc_incrementer_16 pc_plus; // half-adder to add 4 to pc
+  adder16 pc_plus_c; // full adder to add 4*c to pc
+  
+  sig pc[16]; // pc==ia
+  
+  always {
+    
+    // ia == output of pc_reg
+    pc[15:0] = pc_reg.q[15:0];
+    ia = pc[15:0];
+    
+    // add 4 to pc
+    pc_plus.in = pc[15:0];
+    
+    // add c to pc+1
+    pc_plus_c.a = pc_plus.out;
+    pc_plus_c.b[15:9] = 7x{c[8]};
+    pc_plus_c.b[8:0] = c;
+    
+    // feed PC+1 and PC+1+SEXT(C) to pcsel mux
+    pc_select.inp0 = pc_plus.out;
+    pc_select.inp1 = pc_plus_c.s;
+    
+    // feed pcsel mux output and 16b0 to reset mux
+    reset_mux.inp0 = pc_select.out;
+    reset_mux.inp1 = 16b0;
+    
+    // feed reset mux output to dff
+    pc_reg.d = reset_mux.out;
+    
+  }
+}

@@ -1,0 +1,17 @@
+module full_adder (
+    
+    // Basic 1-bit FA
+    
+    input a, // Input bit a
+    input b, // Input bit b
+    input cin, // Input bit cin
+    output s, // Output bit select
+    output cout // Output bit carry out
+    
+  ) {
+
+  always {
+    s = a ^ b ^ cin; // s = a XOR b XOR cin
+    cout = (a & b) | (a & cin) | (b & cin); // cout = ab + acin + bcin
+  }
+}

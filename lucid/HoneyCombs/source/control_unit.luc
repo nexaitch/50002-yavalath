@@ -1,0 +1,66 @@
+module control_unit #(
+
+    // Control unit. Signals checked and tested
+
+    // alufn definitions
+    ALUFN_NOOP = 6b000011,
+    ALUFN_AND = 6b000010,
+    ALUFN_SHL = 6b000001,
+    ALUFN_ADD = 6b000000,
+    ALUFN_SHRC = 6b100001,
+    
+    // Control signals (from MSB to LSB): pcsel[1], ra2sel[1], bsel[1], wdsel[1], alufn[6], wr[1], werf[1] (total 12 bits)
+    CONTROL_SIG = {c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 1111: NOOP
+                   c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 1110: NOOP
+                   c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 1101: NOOP
+                   c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 1100: NOOP
+                   c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 1011: NOOP
+                   c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 1010: NOOP
+                   c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 1001: NOOP
+                   c{1b0,1b0,1b1,1b0,ALUFN_SHRC,1b0,1b1}, // 1000: SHRC
+                   c{1b1,1b1,1b0,1b0,ALUFN_NOOP,1b0,1b0}, // 0111: BF
+                   c{1b0,1b1,1b1,1b0,ALUFN_ADD,1b1,1b0},  // 0110: ST
+                   c{1b0,1b0,1b1,1b1,ALUFN_ADD,1b0,1b1},  // 0101: LD
+                   c{1b0,1b0,1b1,1b0,ALUFN_ADD,1b0,1b1},  // 0100: ADDC
+                   c{1b0,1b0,1b0,1b0,ALUFN_AND,1b0,1b1},  // 0011: AND
+                   c{1b0,1b0,1b0,1b0,ALUFN_SHL,1b0,1b1},  // 0010: SHL
+                   c{1b0,1b0,1b0,1b0,ALUFN_ADD,1b0,1b1},  // 0001: ADD
+                   c{1b0,1b0,1b0,1b0,ALUFN_NOOP,1b0,1b0}} // 0000: NOOP
+  
+  ) (
+    input rst,  // reset
+    input z, // Check whether RB is 0
+    input opcode[4], // opcode (MSB is not relevant)
+    output pcsel, // datapath control bits
+    output ra2sel,
+    output bsel,
+    output wdsel,
+    output alufn[6],
+    output wr,
+    output werf
+  ) {
+
+  always {
+    
+    // pcsel is 1 only if command is BF (only in which case Z affects pcsel, hence we put pcsel bit in CONTROL_SIG as 1) and Z is true
+    pcsel = CONTROL_SIG[opcode[3:0]][11] & z;
+    
+    // ra2sel signal
+    ra2sel = CONTROL_SIG[opcode[3:0]][10];
+    
+    // bsel signal
+    bsel = CONTROL_SIG[opcode[3:0]][9];
+    
+    // wdsel signal
+    wdsel = CONTROL_SIG[opcode[3:0]][8];
+    
+    // alufn signal
+    alufn = CONTROL_SIG[opcode[3:0]][7:2];
+    
+    // wr signal - disable if resetting
+    wr = CONTROL_SIG[opcode[3:0]][1] & (~rst);
+    
+    // werf signal - disable if resetting
+    werf = CONTROL_SIG[opcode[3:0]][0] & (~rst);
+  }
+}

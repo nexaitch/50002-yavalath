@@ -1,0 +1,9 @@
+module buffer (
+    input in,
+    output out
+  ) {
+
+  always {
+    out = in;
+  }
+}

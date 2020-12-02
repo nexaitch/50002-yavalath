@@ -1,0 +1,46 @@
+module grid_selector (
+
+    // Module to select from 9*16 grid, for hexagon grid
+    
+    input select[4], // Bits to select row
+    input grid[144], // Input grid
+    output out[16] // Output row of grid
+  ) {
+
+  always {
+  
+    // Select grid row based on current selection
+    case(select[3:0]){
+      0:
+        out = grid[15:0];
+      
+      1:
+        out = grid[31:16];
+        
+      2:
+        out = grid[47:32];
+        
+      3:
+        out = grid[63:48];
+      
+      4:
+        out = grid[79:64];
+        
+      5:
+        out = grid[95:80];
+      
+      6:
+        out = grid[111:96];
+      
+      7:
+        out = grid[127:112];
+      
+      8:
+        out = grid[143:128];
+        
+      default:
+        out = 16b0;
+    }
+      
+  }
+}

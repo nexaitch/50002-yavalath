@@ -1,0 +1,15 @@
+module half_adder (
+    
+    // Simple 1-bit half-adder module
+    
+    input a, // Input a
+    input b, // Input b
+    output s, // Output s
+    output cout // Output carry-out
+  ) {
+
+  always {
+    s = a ^ b;
+    cout = a & b;
+  }
+}

@@ -1,0 +1,40 @@
+module mux4 (
+
+    // 2-selector mux
+    
+    input inp0, // Inputs for selector = 00, 01, 10, 11 respectively (from index 0)
+    input inp1,
+    input inp2,
+    input inp3,
+    input s0, // Selectors
+    input s1, 
+    output out // The result
+    
+  ) {
+
+  mux2 constituent_mux[2]; // Muxes for first row of selection
+  mux2 final_mux; // Mux for final selection
+  
+  always {
+  
+      // Route 00 and 01 inputs to first mux
+      constituent_mux.inp0[0] = inp0;
+      constituent_mux.inp1[0] = inp1;
+      
+      // Route 10 and 11 inputs to second mux
+      constituent_mux.inp0[1] = inp2;
+      constituent_mux.inp1[1] = inp3; 
+    
+      // Assign selector LSB
+      constituent_mux.s0[0] = s0;
+      constituent_mux.s0[1] = s0;
+    
+      // Assign intermediate outputs to final mux for 2nd row of selection
+      final_mux.inp0 = constituent_mux.out[0];
+      final_mux.inp1 = constituent_mux.out[1];
+      
+      // Assign selector MSB and output result
+      final_mux.s0 = s1;
+      out = final_mux.out;
+  }
+}

@@ -1,0 +1,59 @@
+module regfile (
+
+    // Wrapper for base regfile module.  Essentially facilitates read from R8
+    
+    input clk,  // clock
+    input werf, // Write enable
+    input ra2sel, // ra2sel
+    input write_data[16], // wd
+    input ra[3], // ra
+    input rb[3], // rb
+    input rc[3], // rc
+    output rd1[16], // rd1
+    output rd2[16], // rd2
+    output z, // z
+    output debug_r0[4],
+    output debug_r1[4]
+    
+  ) {
+  
+  regfile_base base_reg(.clk(clk)); // Base regfile
+  mux2 ra2sel_mux[3](.s0(ra2sel)); // Mux for ra2sel control signal
+  mux2 rd1_select[16]; // Mux for rd1, between R8 and all other regs
+  mux2 rd2_select[16]; // Mux for rd2, between R8 and all other regs
+  
+  always {
+    // Assign write signals for base regfile
+    base_reg.write_en = werf;
+    base_reg.waddr = rc;
+    base_reg.write_data = write_data;
+    
+    // Assign ra2sel mux signals
+    ra2sel_mux.inp0 = rb;
+    ra2sel_mux.inp1 = rc;
+    
+    // Assign read addresses for base regfile
+    base_reg.raddr0 = ra;
+    base_reg.raddr1 = ra2sel_mux.out;
+    
+    // Select between R8 and all other regs for rd1
+    rd1_select.s0 = &(ra); // True only if r8
+    rd1_select.inp0 = base_reg.read_data0;
+    rd1_select.inp1 = 16b0;
+    
+    // Select between R8 and all other regs for rd2
+    rd2_select.s0 = &(ra2sel_mux.out);
+    rd2_select.inp0 = base_reg.read_data1;
+    rd2_select.inp1 = 16b0;
+    
+    // Output rd1 and rd2
+    rd1 = rd1_select.out;
+    rd2 = rd2_select.out;
+    
+    // Output z
+    z = ~|(rd2_select.out);
+    
+    debug_r0 = base_reg.debug_r0[3:0];
+    debug_r1 = base_reg.debug_r1[3:0];
+  }
+}

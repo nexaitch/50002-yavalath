@@ -1,0 +1,14 @@
+module mux2 (
+
+    // Simple 1-selector mux;
+    
+    input inp0, // The two inputs, for s=0 and s=1 respectively
+    input inp1,
+    input s0, // Selector bit
+    output out // Result
+  ) {
+
+  always {
+    out = (inp0 & (~s0)) | (inp1 & s0);
+  }
+}

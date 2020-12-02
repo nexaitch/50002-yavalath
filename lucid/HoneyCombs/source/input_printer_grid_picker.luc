@@ -1,0 +1,49 @@
+module input_printer_grid_picker (
+    input rows[9],
+    input column0[9],
+    input column1[9],
+    input select[5],
+    output reader[16]
+  ) {
+  
+  mux2 column[9](.s0(select[4]));
+
+  always {
+    reader[15:9] = 0;
+    column.inp0 = column0;
+    column.inp1 = column1;
+    case (select[3:0]){
+      0:
+        
+        reader[8:0] = column.out & c{9x{~rows[0]}};
+        1:
+        
+        reader[8:0] = column.out & c{9x{~rows[1]}};
+        2:
+        
+        reader[8:0] = column.out & c{9x{~rows[2]}};
+        3:
+        
+        reader[8:0] = column.out & c{9x{~rows[3]}};
+        4:
+        
+        reader[8:0] = column.out & c{9x{~rows[4]}};
+        5:
+        
+        reader[8:0] = column.out & c{9x{~rows[5]}};
+        6:
+        
+        reader[8:0] = column.out & c{9x{~rows[6]}};
+        7:
+        
+        reader[8:0] = column.out & c{9x{~rows[7]}};
+        
+        8:
+        
+        reader[8:0] = column.out & c{9x{~rows[8]}};
+        default:
+        
+        reader[8:0] = 0;
+    }
+  }
+}

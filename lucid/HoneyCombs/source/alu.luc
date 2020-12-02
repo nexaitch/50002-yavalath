@@ -1,0 +1,56 @@
+module alu (
+
+    // Main ALU module. Tested.
+    
+    input alufn[6], // ALUFN code
+    input a[16], // Input a
+    input b[16], // Input b
+    output out[16], // Output
+    output z, // Output z (for debugging)
+    output v, // Output v (for debugging)
+    output n // Output n (for debugging)
+    
+  ) {
+  
+  adder16 adder16_mod; // Adder module (ALUFN: 000000 for ADD (addition))
+  shifter16 shifter16_mod; // Shifter module (ALUFN: 000001 for SHL (logical shift left), 100001 for SHR (logical shift right))
+  and16 and16_mod; // Bitwise AND module (ALUFN: 000010 for AND (bitwise AND))
+  // Additionally, ALUFN: 000011 represents NOOP (ALU just doesn't do anything)
+  
+  mux4 output_mux[16](.s0(alufn[0]), .s1(alufn[1])); // Mux to select between outputs of different modules using ALUFN[1:0]
+  
+  always {
+    
+    // Assign a and b to adder module
+    adder16_mod.a = a;
+    adder16_mod.b = b;
+    
+    // Assign adder module outputs to z, v, n and output selector mux
+    output_mux.inp0 = adder16_mod.s;
+    z = adder16_mod.z;
+    v = adder16_mod.v;
+    n = adder16_mod.n;
+    
+    // Assign a and b and alufn to shifter module
+    shifter16_mod.alufn = alufn;
+    shifter16_mod.a = a;
+    shifter16_mod.b = b;
+    
+    // Assign shifter module output to output selector mux
+    output_mux.inp1 = shifter16_mod.shift;
+    
+    // Assign a and b to AND module
+    and16_mod.a = a;
+    and16_mod.b = b;
+    
+    // Assign AND module output to output selector mux
+    output_mux.inp2 = and16_mod.bool;
+    
+    // Assign 0x0000 to 3rd input of output selector mux
+    output_mux.inp3 = 16h0000;
+    
+    // Assign output of the mux
+    out = output_mux.out;
+    
+  }
+}

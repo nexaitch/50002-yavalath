@@ -1,0 +1,1982 @@
+Warnings in file C:\Users\USER\Documents\GitHub\naffins\50.002-HoneyCombs\HoneyCombs\source\au_top.luc:
+    Line 3, Column 4 : "rst_n" was never used
+Starting Vivado...
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source {C:\Users\USER\Documents\GitHub\naffins\50.002-HoneyCombs\HoneyCombs\work\project.tcl}
+# set projDir "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado"
+# set projName "HoneyCombs"
+# set topName top
+# set device xc7a35tftg256-1
+# if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
+# create_project $projName "$projDir/$projName" -part $device
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs'
+# set_property design_mode RTL [get_filesets sources_1]
+# set verilogSources [list "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/au_top_0.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/prealpha_1.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/reset_conditioner_2.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/pc_3.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/control_unit_4.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/instruction_memory_unit_5.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/regfile_6.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/data_memory_7.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/alu_8.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/joystick_regulator_9.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/button_regulator_10.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/input_printer_11.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/mux2_12.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/pc_incrementer_16_13.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/adder16_14.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/regfile_base_15.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/shifter16_16.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/and16_17.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/mux4_18.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/input_regulator_19.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/joystick_mapper_20.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/input_regulator_21.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/buffer_22.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/counter_23.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/counter_24.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/grid_selector_25.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/full_adder_26.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/input_conditioner_27.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/half_adder_28.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/input_conditioner_29.v" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/verilog/input_pipeline_30.v" ]
+# import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
+# set xdcSources [list "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc" "C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc" ]
+# read_xdc $xdcSources
+# set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
+# update_compile_order -fileset sources_1
+# launch_runs -runs synth_1 -jobs 8
+[Thu Dec  3 04:35:13 2020] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Thu Dec  3 04:35:13 2020] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log au_top_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source au_top_0.tcl -notrace
+Command: synth_design -top au_top_0 -part xc7a35tftg256-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4388 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 835.355 ; gain = 235.055
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'prealpha_1' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/prealpha_1.v:7]
+INFO: [Synth 8-6157] synthesizing module 'mux2_12' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux2_12.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux2_12' (1#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux2_12.v:7]
+INFO: [Synth 8-6157] synthesizing module 'pc_3' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'pc_incrementer_16_13' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_incrementer_16_13.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'pc_incrementer_16_13' (2#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_incrementer_16_13.v:7]
+INFO: [Synth 8-6157] synthesizing module 'adder16_14' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:7]
+INFO: [Synth 8-6157] synthesizing module 'full_adder_26' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/full_adder_26.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'full_adder_26' (3#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/full_adder_26.v:7]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cout_reg' and it is trimmed from '16' to '15' bits. [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'adder16_14' (4#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'pc_3' (5#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'control_unit_4' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/control_unit_4.v:16]
+	Parameter ALUFN_NOOP bound to: 6'b000011 
+	Parameter ALUFN_AND bound to: 6'b000010 
+	Parameter ALUFN_SHL bound to: 6'b000001 
+	Parameter ALUFN_ADD bound to: 6'b000000 
+	Parameter ALUFN_SHRC bound to: 6'b100001 
+	Parameter CONTROL_SIG bound to: 192'b000000001100000000001100000000001100000000001100000000001100000000001100000000001100001010000101110000001100011000000010001100000001001000000001000000001001000000000101000000000001000000001100 
+INFO: [Synth 8-6155] done synthesizing module 'control_unit_4' (6#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/control_unit_4.v:16]
+INFO: [Synth 8-6157] synthesizing module 'instruction_memory_unit_5' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/instruction_memory_unit_5.v:12]
+	Parameter DEPTH_LOG bound to: 4'b1001 
+	Parameter INSTR bound to: 8192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111101111110000000000110001000010011100000100100000101000000001111110110001000010011100000100100000101000000001111110110001000010011010000000000001001111110000010010110001000010011000100100101000010000100100000010001001001010000100001000100000101111110000011
+110110001000010011010000000000000101100010000100110100000000000001011000100001001101110100000001100100010010111111011101000000111000110100101010001000101101000100010001011100001100110000001010000100000111001111000100111011100001111101011101000111111111110001010000000000000101111110000000100001110001111000000110110100000001001011110000000111001000000100001100100101000000100100100110000100011111000001010100100110100101010100001010010100001000000001011100100000110101000010001110010100000111000000011111111110100101000000000000010111111000110001011000100001001110000010010000010100000000111111011000100001001110000010010000010100000000111111011000100001001110000010010000010100000000111111011000100001001101000000000000110111001000001100001100100101000000100100100110000100011111000010010100100110100101010100001010010100001000000010011100100001010101000010001110100100000111000000011111111111010001000000000000010110001000101001001100100101000000100010010110000100011111000001010101001000000001010010010000000100010001000001000100110000000001110010000010100100001000111000010000011100000001111111111100110100000000000001011111100000001000011100011110000001101101000000010010111101000001110010000001000011001001010000001001000101000001000101110000010101001000101001011100100000101101000010001101110100000111000000011111111111000101000000000000010111111001100100011000100001001100010010100010001000010001000010000100101000100010000100010000010111001000000110001100100101000000100100010100000100010111000010010100100010100101110010000011010100001000110111010000011100000001111111111101100100000000000001011000100010100100110010010100000010010001010000010001011100000101010010010000000001001100000000011100100000100001000010001101110100000111000000011111111111001101000000000000010111111000000010000111000111100000011011010000000100101111100000011100100000010000110010010100000101001001101001010101000010100101000010000000010111001000001011010000100011100101000001110000000111111111101111010000000000000101111110100011010110001000010011010000000000000101100010000100110100000000000001011000100001001101000000000000010110001000010011011100100000100000110010010100000101001001101001010101000010100101000010000000100111001000001111010000100011101001000001110000000111111111110110010000000000000101100010001010010011001001010000010101001000000001010010010000000100010001000001000100110000000001110010000010000100001000111000010000011100000001001101110000000111111110111010011111100000000101001001110000010110100000000001000110010001000001011000000000010111111000000100010010011100101001101000000010100001100100010000010110000000101001110110000001010101011111011100001001001000100001000101110000010110111000010011011111111101010101110100000000010011010010011000010101100000101000100100100010000100010111000001011111111101101101110100000000010011010010011000010101100000000100100100100010000100010111000001011111111101111000010010111110000001000010111000011011100001001101111001111001010011100100101000010110101010000000101001000110000100100111000001011110011110101001001000111101110111100111101100010010001100000101111001111011100100100010110111011110011111000001001000100000010100011011111110010001001011111000010100000100000001011001011000100001101100001000110100100110000100010111000011011011111100000001110111111110100101011111000000011111100001101101101111110111010111010000000010010101011101110101100100000100110010010010001000010001011100000101000011110001000100000111000100011000011101110001000001110000010111111000000001010000011100000001110000000000100101000111011100011000011110100000110000000010000100001111110000011000011110011100110000000010000100001111111000011000011110011000110000000010000100001111111100011000011110010100110000000010000100001111111110011000011110010001000000000000010010000000001000011000011110001101000000000000010010000000001000011000011110001001000000000000010010000000001000011000011110000101000000000000010010000000001000011000011110000001000011110000010100000111011111011111111111100101000000000000010110111000010011011011100000101001101110000000010111001000000
+1... (message truncated)
+INFO: [Synth 8-6155] done synthesizing module 'instruction_memory_unit_5' (7#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/instruction_memory_unit_5.v:12]
+INFO: [Synth 8-6157] synthesizing module 'regfile_6' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regfile_base_15' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_base_15.v:4]
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'regfile_base_15' (8#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_base_15.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_6' (9#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'data_memory_7' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/data_memory_7.v:5]
+	Parameter SIZE bound to: 16 - type: integer 
+	Parameter DEPTH bound to: 64 - type: integer 
+	Parameter JOYSTICK_ADDR bound to: 0 - type: integer 
+	Parameter BUTTON_ADDR bound to: 29 - type: integer 
+	Parameter PLAYER0_START bound to: 1 - type: integer 
+	Parameter PLAYER1_START bound to: 10 - type: integer 
+	Parameter SELECTED_START bound to: 19 - type: integer 
+	Parameter TURN_ADDR bound to: 28 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'data_memory_7' (10#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/data_memory_7.v:5]
+INFO: [Synth 8-6157] synthesizing module 'alu_8' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/alu_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'mux4_18' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux4_18.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux4_18' (11#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux4_18.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shifter16_16' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/shifter16_16.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'shifter16_16' (12#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/shifter16_16.v:7]
+INFO: [Synth 8-6157] synthesizing module 'and16_17' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/and16_17.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'and16_17' (13#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/and16_17.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'alu_8' (14#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/alu_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'joystick_regulator_9' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_regulator_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_regulator_19' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_19.v:16]
+	Parameter INPUT_WIDTH bound to: 3'b100 
+	Parameter DATA_WIDTH bound to: 5'b10000 
+	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
+	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
+	Parameter INPUT_REFRESH_CYCLE_COUNT bound to: 26'b10111110101111000010000000 
+	Parameter INPUT_REFRESH_CYCLE_COUNT_OFFSET bound to: 27'b010111110101111000001111111 
+INFO: [Synth 8-6157] synthesizing module 'half_adder_28' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/half_adder_28.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'half_adder_28' (15#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/half_adder_28.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_conditioner_27' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_27.v:14]
+	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
+	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
+	Parameter DEBOUNCING_CYCLE_COUNT bound to: 25'b0100110001001011001111011 
+	Parameter WIDTH bound to: 3'b100 
+INFO: [Synth 8-6157] synthesizing module 'input_pipeline_30' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_pipeline_30.v:11]
+	Parameter DELAY_CYCLE_COUNT bound to: 3'b101 
+INFO: [Synth 8-6155] done synthesizing module 'input_pipeline_30' (16#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_pipeline_30.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'input_conditioner_27' (17#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_27.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'input_regulator_19' (18#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_19.v:16]
+INFO: [Synth 8-6157] synthesizing module 'joystick_mapper_20' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_mapper_20.v:11]
+	Parameter MAP bound to: 256'b0000000000000000000000000000000000000000000000000000000000001101000000000000000000000000000000000000000000001111000000000000111000000000000000000000000000000101000000000000000000000000000000000000000000000111000000000000011000000000000000000000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'joystick_mapper_20' (19#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_mapper_20.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'joystick_regulator_9' (20#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_regulator_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_regulator_10' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/button_regulator_10.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_regulator_21' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_21.v:16]
+	Parameter INPUT_WIDTH bound to: 1'b1 
+	Parameter DATA_WIDTH bound to: 5'b10000 
+	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
+	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
+	Parameter INPUT_REFRESH_CYCLE_COUNT bound to: 26'b10111110101111000010000000 
+	Parameter INPUT_REFRESH_CYCLE_COUNT_OFFSET bound to: 27'b010111110101111000001111111 
+INFO: [Synth 8-6157] synthesizing module 'input_conditioner_29' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_29.v:14]
+	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
+	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
+	Parameter DEBOUNCING_CYCLE_COUNT bound to: 25'b0100110001001011001111011 
+	Parameter WIDTH bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'input_conditioner_29' (21#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_29.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'input_regulator_21' (22#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_21.v:16]
+INFO: [Synth 8-6157] synthesizing module 'buffer_22' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/buffer_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'buffer_22' (23#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/buffer_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'button_regulator_10' (24#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/button_regulator_10.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_printer_11' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_printer_11.v:13]
+	Parameter GRID_SIZE bound to: 4'b1001 
+	Parameter SPEED bound to: 4'b1010 
+	Parameter BLINK_SPEED bound to: 5'b11011 
+INFO: [Synth 8-6157] synthesizing module 'counter_23' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_23.v:14]
+	Parameter SIZE bound to: 1'b1 
+	Parameter DIV bound to: 4'b1010 
+	Parameter TOP bound to: 1'b0 
+	Parameter UP bound to: 1'b1 
+	Parameter MAX_VALUE bound to: 11'b01111111111 
+INFO: [Synth 8-6155] done synthesizing module 'counter_23' (25#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_23.v:14]
+INFO: [Synth 8-6157] synthesizing module 'counter_24' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_24.v:14]
+	Parameter SIZE bound to: 1'b1 
+	Parameter DIV bound to: 5'b11011 
+	Parameter TOP bound to: 1'b0 
+	Parameter UP bound to: 1'b1 
+	Parameter MAX_VALUE bound to: 28'b0111111111111111111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'counter_24' (26#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_24.v:14]
+INFO: [Synth 8-6157] synthesizing module 'grid_selector_25' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/grid_selector_25.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'grid_selector_25' (27#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/grid_selector_25.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'input_printer_11' (28#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_printer_11.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'prealpha_1' (29#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/prealpha_1.v:7]
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_2' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
+	Parameter STAGES bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_2' (30#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (31#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/au_top_0.v:7]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[4]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[3]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[2]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[1]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[0]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[15]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[14]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[13]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[12]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[11]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[10]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[9]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[8]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[7]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[6]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[5]
+WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[4]
+WARNING: [Synth 8-3331] design au_top_0 has unconnected port rst_n
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 910.898 ; gain = 310.598
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 910.898 ; gain = 310.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 910.898 ; gain = 310.598
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 910.898 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]
+Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]
+Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1014.633 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1014.633 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.633 ; gain = 414.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.633 ; gain = 414.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.633 ; gain = 414.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1014.633 ; gain = 414.332
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     27 Bit         XORs := 2     
+	   2 Input     25 Bit         XORs := 2     
+	   2 Input     16 Bit         XORs := 2     
+	   2 Input     15 Bit         XORs := 1     
+	   2 Input      5 Bit         XORs := 1     
+	   2 Input      4 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 102   
+	   3 Input      1 Bit         XORs := 32    
++---Registers : 
+	               26 Bit    Registers := 2     
+	               24 Bit    Registers := 2     
+	               16 Bit    Registers := 75    
+	               11 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 74    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module pc_incrementer_16_13 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     15 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
+Module full_adder_26 
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 1     
+Module pc_3 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module regfile_base_15 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 8     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 8     
+Module data_memory_7 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 64    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 66    
+Module input_pipeline_30 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module half_adder_28 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module input_conditioner_27 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     25 Bit         XORs := 1     
+	   2 Input      4 Bit         XORs := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+Module input_regulator_19 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     27 Bit         XORs := 1     
+	   2 Input     16 Bit         XORs := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+Module input_conditioner_29 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     25 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module input_regulator_21 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     27 Bit         XORs := 1     
+	   2 Input     16 Bit         XORs := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+Module counter_23 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+Module input_printer_11 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      5 Bit         XORs := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+Module reset_conditioner_2 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[143]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[142]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[141]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[140]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[139]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[138]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[137]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[127]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[126]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[125]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[124]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[123]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[122]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[121]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[111]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[110]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[109]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[108]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[107]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[106]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[105]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[95]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[94]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[93]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[92]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[91]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[90]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[89]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[79]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[78]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[77]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[76]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[75]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[74]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[73]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[63]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[62]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[61]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[60]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[59]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[58]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[57]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[47]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[46]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[45]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[44]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[43]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[42]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[41]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[31]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[30]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[29]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[28]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[27]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[26]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[25]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[15]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[14]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[13]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[12]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[11]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[10]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player0_occupancy[9]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[143]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[142]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[141]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[140]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[139]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[138]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[137]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[127]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[126]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[125]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[124]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[123]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[122]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[121]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[111]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[110]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[109]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[108]
+WARNING: [Synth 8-3331] design input_printer_11 has unconnected port player1_occupancy[107]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[4]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[5]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[5]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[6]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[6]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[7]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[7]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[8]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[8]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[9]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[9]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[10]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[10]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[11]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[11]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[12]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[12]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[13]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[13]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[14]'
+INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[14]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (prealpha/joystick_regulator/\regulator/M_input_tracker_q_reg[15] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1014.633 ; gain = 414.332
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1014.633 ; gain = 414.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1052.195 ; gain = 451.895
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1073.105 ; gain = 472.805
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1078.562 ; gain = 478.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1078.562 ; gain = 478.262
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                                                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|au_top_0    | prealpha/joystick_regulator/regulator/conditioner/pipeline_gen_0[0].pipeline/M_pipe_q_reg[4] | 5      | 4     | NO           | YES                | YES               | 4      | 0       | 
+|au_top_0    | prealpha/button_regulator/regulator/conditioner/pipeline_gen_0[0].pipeline/M_pipe_q_reg[4]   | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|au_top_0    | reset_cond/M_stage_q_reg[3]                                                                  | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+----------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     7|
+|3     |LUT1   |     8|
+|4     |LUT2   |    79|
+|5     |LUT3   |    69|
+|6     |LUT4   |   166|
+|7     |LUT5   |   184|
+|8     |LUT6   |   740|
+|9     |MUXF7  |   139|
+|10    |MUXF8  |     4|
+|11    |SRL16E |     6|
+|12    |FDRE   |  1324|
+|13    |IBUF   |     7|
+|14    |OBUF   |    38|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+--------------------------+------+
+|      |Instance                               |Module                    |Cells |
++------+---------------------------------------+--------------------------+------+
+|1     |top                                    |                          |  2772|
+|2     |  prealpha                             |prealpha_1                |  2724|
+|3     |    \bsel_mux_gen_0[0].bsel_mux        |mux2_12                   |     1|
+|4     |    \bsel_mux_gen_0[1].bsel_mux        |mux2_12_6                 |     1|
+|5     |    \bsel_mux_gen_0[2].bsel_mux        |mux2_12_7                 |     1|
+|6     |    \bsel_mux_gen_0[3].bsel_mux        |mux2_12_8                 |     1|
+|7     |    \bsel_mux_gen_0[4].bsel_mux        |mux2_12_9                 |     1|
+|8     |    \wdsel_mux_gen_0[0].wdsel_mux      |mux2_12_15                |     1|
+|9     |    \wdsel_mux_gen_0[10].wdsel_mux     |mux2_12_16                |     1|
+|10    |    \wdsel_mux_gen_0[11].wdsel_mux     |mux2_12_17                |     1|
+|11    |    \wdsel_mux_gen_0[12].wdsel_mux     |mux2_12_18                |     1|
+|12    |    \wdsel_mux_gen_0[13].wdsel_mux     |mux2_12_19                |     1|
+|13    |    \wdsel_mux_gen_0[14].wdsel_mux     |mux2_12_20                |     1|
+|14    |    \wdsel_mux_gen_0[15].wdsel_mux     |mux2_12_21                |     1|
+|15    |    \wdsel_mux_gen_0[1].wdsel_mux      |mux2_12_22                |     1|
+|16    |    \wdsel_mux_gen_0[2].wdsel_mux      |mux2_12_23                |     1|
+|17    |    \wdsel_mux_gen_0[3].wdsel_mux      |mux2_12_24                |     1|
+|18    |    \wdsel_mux_gen_0[4].wdsel_mux      |mux2_12_25                |     1|
+|19    |    \wdsel_mux_gen_0[5].wdsel_mux      |mux2_12_26                |     1|
+|20    |    \wdsel_mux_gen_0[6].wdsel_mux      |mux2_12_27                |     1|
+|21    |    \wdsel_mux_gen_0[7].wdsel_mux      |mux2_12_28                |     1|
+|22    |    \wdsel_mux_gen_0[9].wdsel_mux      |mux2_12_30                |     1|
+|23    |    \bsel_mux_gen_0[10].bsel_mux       |mux2_12_0                 |     1|
+|24    |    \bsel_mux_gen_0[11].bsel_mux       |mux2_12_1                 |     1|
+|25    |    \bsel_mux_gen_0[12].bsel_mux       |mux2_12_2                 |     1|
+|26    |    \bsel_mux_gen_0[13].bsel_mux       |mux2_12_3                 |     1|
+|27    |    \bsel_mux_gen_0[14].bsel_mux       |mux2_12_4                 |     1|
+|28    |    \bsel_mux_gen_0[15].bsel_mux       |mux2_12_5                 |     1|
+|29    |    \bsel_mux_gen_0[5].bsel_mux        |mux2_12_10                |     1|
+|30    |    \bsel_mux_gen_0[6].bsel_mux        |mux2_12_11                |     1|
+|31    |    \bsel_mux_gen_0[7].bsel_mux        |mux2_12_12                |     1|
+|32    |    \bsel_mux_gen_0[8].bsel_mux        |mux2_12_13                |     1|
+|33    |    \bsel_mux_gen_0[9].bsel_mux        |mux2_12_14                |     1|
+|34    |    button_regulator                   |button_regulator_10       |   148|
+|35    |      regulator                        |input_regulator_21        |   148|
+|36    |        conditioner                    |input_conditioner_29      |   101|
+|37    |          \pipeline_gen_0[0].pipeline  |input_pipeline_30_34      |    28|
+|38    |    data_memory                        |data_memory_7             |  1474|
+|39    |    input_printer                      |input_printer_11          |   106|
+|40    |      blink_slowclock                  |counter_24                |    63|
+|41    |      slowclock                        |counter_23                |    23|
+|42    |    instr_mem_unit                     |instruction_memory_unit_5 |   212|
+|43    |    joystick_regulator                 |joystick_regulator_9      |   168|
+|44    |      regulator                        |input_regulator_19        |   168|
+|45    |        conditioner                    |input_conditioner_27      |   103|
+|46    |          \pipeline_gen_0[0].pipeline  |input_pipeline_30         |     3|
+|47    |          \pipeline_gen_0[1].pipeline  |input_pipeline_30_31      |     5|
+|48    |          \pipeline_gen_0[2].pipeline  |input_pipeline_30_32      |     4|
+|49    |          \pipeline_gen_0[3].pipeline  |input_pipeline_30_33      |     3|
+|50    |    pc                                 |pc_3                      |   441|
+|51    |    regfile                            |regfile_6                 |   143|
+|52    |      base_reg                         |regfile_base_15           |   143|
+|53    |    \wdsel_mux_gen_0[8].wdsel_mux      |mux2_12_29                |     1|
+|54    |  reset_cond                           |reset_conditioner_2       |     2|
++------+---------------------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 193 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:49 . Memory (MB): peak = 1078.562 ; gain = 374.527
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1090.633 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 150 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1090.633 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+88 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1090.633 ; gain = 785.641
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1090.633 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  3 04:36:24 2020...
+[Thu Dec  3 04:36:29 2020] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:16 . Memory (MB): peak = 333.387 ; gain = 0.000
+# launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Thu Dec  3 04:36:29 2020] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Thu Dec  3 04:36:29 2020] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log au_top_0.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source au_top_0.tcl -notrace
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source au_top_0.tcl -notrace
+Command: link_design -top au_top_0 -part xc7a35tftg256-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 603.711 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 150 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]
+Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]
+Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]
+Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 728.203 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 732.211 ; gain = 421.156
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.661 . Memory (MB): peak = 750.160 ; gain = 17.949
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 13d5354b3
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1294.766 ; gain = 544.605
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1325ff0c1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.251 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 2 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1325ff0c1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.278 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 223255132
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.339 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 9 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common MMCM/DPLL/XPLL driver.
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common driver.
+INFO: [Opt 31-1092] Phase BUFG optimization transformed 0 BUFG(s) to MBUFG(s).
+Phase 4 BUFG optimization | Checksum: 223255132
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.387 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 223255132
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.430 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 135052d11
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.446 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               2  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               9  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 170ee28c8
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.503 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 170ee28c8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 170ee28c8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 170ee28c8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1485.777 ; gain = 753.566
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1485.777 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/au_top_0_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
+Command: report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/au_top_0_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: f78124ba
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 179320a5c
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 20aa95f50
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 20aa95f50
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 20aa95f50
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1f65b8590
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1018] Found 1 candidate LUT instances to create LUTNM shape
+INFO: [Physopt 32-775] End 1 Pass. Optimized 65 nets or cells. Created 65 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           65  |              0  |                    65  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           65  |              0  |                    65  |           0  |           7  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 12ab23f8f
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Phase 2.2 Global Placement Core | Checksum: c2d99acd
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Phase 2 Global Placement | Checksum: c2d99acd
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 108916a8f
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 18c7ab8f5
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 13014592a
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 16144f57a
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 190eecfe9
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:13 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: da0a16ba
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:16 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: eea85b04
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:16 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: fe4e7d28
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:16 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 1ee3888e8
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1485.777 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1ee3888e8
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1485.777 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 2608d5bc3
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 2608d5bc3
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:24 . Memory (MB): peak = 1489.742 ; gain = 3.965
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-2.411. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 142592679
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:01:06 . Memory (MB): peak = 1489.742 ; gain = 3.965
+Phase 4.1 Post Commit Optimization | Checksum: 142592679
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:01:06 . Memory (MB): peak = 1489.742 ; gain = 3.965
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 142592679
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:01:06 . Memory (MB): peak = 1489.742 ; gain = 3.965
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 142592679
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:01:06 . Memory (MB): peak = 1489.742 ; gain = 3.965
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1489.742 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 18a769420
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:01:06 . Memory (MB): peak = 1489.742 ; gain = 3.965
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 18a769420
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:01:06 . Memory (MB): peak = 1489.742 ; gain = 3.965
+Ending Placer Task | Checksum: 11f655fbc
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:01:06 . Memory (MB): peak = 1489.742 ; gain = 3.965
+INFO: [Common 17-83] Releasing license: Implementation
+62 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:08 . Memory (MB): peak = 1489.742 ; gain = 3.965
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1489.742 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.405 . Memory (MB): peak = 1490.660 ; gain = 0.918
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/au_top_0_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file au_top_0_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1490.660 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_placed.rpt -pb au_top_0_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file au_top_0_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1490.660 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1505.625 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.836 | TNS=-2281.658 |
+Phase 1 Physical Synthesis Initialization | Checksum: 17d7922b6
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1505.633 ; gain = 0.008
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.836 | TNS=-2281.658 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 17d7922b6
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1505.633 ; gain = 0.008
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.836 | TNS=-2281.658 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[12].  Re-placed instance prealpha/regfile/base_reg/mem_reg[1][12]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.443 | TNS=-2280.820 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input0_read_data[4].  Re-placed instance prealpha/data_memory/mem_reg[0][4]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input0_read_data[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.443 | TNS=-2281.137 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input0_read_data[9].  Re-placed instance prealpha/data_memory/mem_reg[0][9]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input0_read_data[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.433 | TNS=-2281.630 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input0_read_data[10].  Re-placed instance prealpha/data_memory/mem_reg[0][10]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input0_read_data[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.433 | TNS=-2281.431 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_input0_read_data[11].  Did not re-place instance prealpha/data_memory/mem_reg[0][11]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/M_data_memory_input0_read_data[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[7]. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.425 | TNS=-2281.112 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input0_read_data[12].  Re-placed instance prealpha/data_memory/mem_reg[0][12]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input0_read_data[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.425 | TNS=-2281.678 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input0_read_data[13].  Re-placed instance prealpha/data_memory/mem_reg[0][13]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input0_read_data[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.425 | TNS=-2282.086 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_input0_read_data[8].  Did not re-place instance prealpha/data_memory/mem_reg[0][8]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/M_data_memory_input0_read_data[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[5]. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.409 | TNS=-2281.615 |
+INFO: [Physopt 32-572] Net prealpha/pc/M_pc_ia[7] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[7].  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[7]
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/p_3_out was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_3_out.  Did not re-place instance prealpha/pc/mem[0][15]_i_3
+INFO: [Physopt 32-710] Processed net prealpha/pc/M_stage_q_reg[3]_55[0]. Critical path length was reduced through logic transformation on cell prealpha/pc/mem[0][15]_i_1_comp.
+INFO: [Physopt 32-735] Processed net prealpha/pc/p_3_out. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.394 | TNS=-2273.552 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_input0_read_data[9].  Did not re-place instance prealpha/data_memory/mem_reg[0][9]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/M_data_memory_input0_read_data[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/p_3_out was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_3_out.  Did not re-place instance prealpha/pc/mem[0][15]_i_3
+INFO: [Physopt 32-572] Net prealpha/pc/p_3_out was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/p_3_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/mem[16][15]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/mem[16][15]_i_2_n_0.  Did not re-place instance prealpha/pc/mem[16][15]_i_2
+INFO: [Physopt 32-710] Processed net prealpha/pc/p_3_out. Critical path length was reduced through logic transformation on cell prealpha/pc/mem[0][15]_i_3_comp_1.
+INFO: [Physopt 32-735] Processed net prealpha/pc/mem[16][15]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.387 | TNS=-2271.153 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[13].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[2][13]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_read_data[1].  Did not re-place instance prealpha/data_memory/out0_i_5__9
+INFO: [Physopt 32-710] Processed net prealpha/wdsel_mux_gen_0[13].wdsel_mux/out0_i_5__9[0]. Critical path length was reduced through logic transformation on cell prealpha/wdsel_mux_gen_0[13].wdsel_mux/out0_comp.
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_read_data[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.377 | TNS=-2270.642 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input1_read_data[9].  Re-placed instance prealpha/data_memory/mem_reg[29][9]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input1_read_data[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.370 | TNS=-2269.770 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[34]_38[10].  Re-placed instance prealpha/data_memory/mem_reg[34][10]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[34]_38[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.370 | TNS=-2269.615 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[34]_38[6].  Re-placed instance prealpha/data_memory/mem_reg[34][6]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[34]_38[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.364 | TNS=-2269.489 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/Q[1].  Re-placed instance prealpha/regfile/base_reg/mem_reg[5][1]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/Q[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.361 | TNS=-2269.137 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input1_read_data[4].  Re-placed instance prealpha/data_memory/mem_reg[29][4]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input1_read_data[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.359 | TNS=-2268.274 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/mem_reg[58]_14[0].  Did not re-place instance prealpha/data_memory/mem_reg[58][0]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/mem_reg[58]_14[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[8]. Replicated 5 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.358 | TNS=-2274.361 |
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[3]. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.355 | TNS=-2257.740 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[8].  Re-placed instance prealpha/regfile/base_reg/mem_reg[1][8]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.346 | TNS=-2257.717 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[3][15]_0[2].  Re-placed instance prealpha/regfile/base_reg/mem_reg[3][2]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[3][15]_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.343 | TNS=-2257.667 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[2].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][2]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_8__1_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_8__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.341 | TNS=-2255.587 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[8].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][8]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_read_data[0].  Did not re-place instance prealpha/data_memory/out0_i_3__16
+INFO: [Physopt 32-710] Processed net prealpha/wdsel_mux_gen_0[8].wdsel_mux/out0_i_3__16[0]. Critical path length was reduced through logic transformation on cell prealpha/wdsel_mux_gen_0[8].wdsel_mux/out0_comp.
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_read_data[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.335 | TNS=-2255.291 |
+INFO: [Physopt 32-572] Net prealpha/pc/M_pc_ia[3] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[3].  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[3]
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/pc/mem[24][15]_i_2_n_0.  Re-placed instance prealpha/pc/mem[24][15]_i_2
+INFO: [Physopt 32-735] Processed net prealpha/pc/mem[24][15]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.335 | TNS=-2242.139 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/Q[12].  Re-placed instance prealpha/regfile/base_reg/mem_reg[5][12]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/Q[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.334 | TNS=-2241.879 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[7][15]_0[10].  Re-placed instance prealpha/regfile/base_reg/mem_reg[7][10]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[7][15]_0[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.329 | TNS=-2241.828 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/Q[11].  Re-placed instance prealpha/regfile/base_reg/mem_reg[5][11]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/Q[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.328 | TNS=-2241.814 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[3].  Re-placed instance prealpha/regfile/base_reg/mem_reg[2][3]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.326 | TNS=-2241.658 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[11].  Re-placed instance prealpha/regfile/base_reg/mem_reg[2][11]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.323 | TNS=-2241.491 |
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_17__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.321 | TNS=-2241.363 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg_n_0_[2][10].  Re-placed instance prealpha/data_memory/mem_reg[2][10]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg_n_0_[2][10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.315 | TNS=-2241.100 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[11].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][11]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_8__8_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_8__8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.314 | TNS=-2240.348 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8].  Re-placed instance prealpha/data_memory/mem_reg[29][8]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.311 | TNS=-2240.308 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[10].  Re-placed instance prealpha/regfile/base_reg/mem_reg[6][10]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.308 | TNS=-2240.119 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/Q[10].  Re-placed instance prealpha/regfile/base_reg/mem_reg[5][10]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/Q[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.307 | TNS=-2240.095 |
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_18__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.304 | TNS=-2239.479 |
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_14__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/out0_i_35__0_n_0.  Re-placed instance prealpha/data_memory/out0_i_35__0
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_35__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.299 | TNS=-2239.439 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/out0_i_35__0_n_0.  Did not re-place instance prealpha/data_memory/out0_i_35__0
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_35__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.293 | TNS=-2239.335 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[12].  Re-placed instance prealpha/regfile/base_reg/mem_reg[6][12]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.292 | TNS=-2239.157 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[0][15]_0[15].  Re-placed instance prealpha/regfile/base_reg/mem_reg[0][15]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[0][15]_0[15]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.287 | TNS=-2239.097 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/Q[15].  Re-placed instance prealpha/regfile/base_reg/mem_reg[5][15]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/Q[15]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.286 | TNS=-2238.981 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/out0_i_35__0_n_0.  Did not re-place instance prealpha/data_memory/out0_i_35__0
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_35__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/M_alu_out[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[0].  Did not re-place instance prealpha/pc/out0_i_1__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_8__13_n_0.  Did not re-place instance prealpha/pc/out0_i_8__13
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_8__13_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_8__13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_9__12_n_0.  Did not re-place instance prealpha/pc/out0_i_9__12
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_9__12_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_9__12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_18__14_n_0.  Did not re-place instance prealpha/pc/out0_i_18__14
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_18__14_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net prealpha/pc/out0_i_18__14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.274 | TNS=-2234.514 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8].  Did not re-place instance prealpha/data_memory/mem_reg[29][8]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/p_7_out was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_7_out.  Did not re-place instance prealpha/pc/mem[29][15]_i_3
+INFO: [Physopt 32-81] Processed net prealpha/pc/p_7_out. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/p_7_out. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.259 | TNS=-2237.468 |
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_7_out.  Did not re-place instance prealpha/pc/mem[29][15]_i_3
+INFO: [Physopt 32-81] Processed net prealpha/pc/p_7_out. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/p_7_out. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.255 | TNS=-2238.610 |
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_7_out.  Did not re-place instance prealpha/pc/mem[29][15]_i_3
+INFO: [Physopt 32-572] Net prealpha/pc/p_7_out was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/p_7_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/mem[29][15]_i_6_n_0.  Did not re-place instance prealpha/pc/mem[29][15]_i_6
+INFO: [Physopt 32-710] Processed net prealpha/pc/p_7_out. Critical path length was reduced through logic transformation on cell prealpha/pc/mem[29][15]_i_3_comp.
+INFO: [Physopt 32-735] Processed net prealpha/pc/mem[29][15]_i_6_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.255 | TNS=-2237.975 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[15].  Re-placed instance prealpha/regfile/base_reg/mem_reg[2][15]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[15]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.254 | TNS=-2237.802 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[3].  Re-placed instance prealpha/data_memory/mem_reg[50][3]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[50]_22[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.254 | TNS=-2237.635 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[7].  Re-placed instance prealpha/data_memory/mem_reg[50][7]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[50]_22[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.254 | TNS=-2237.468 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[9].  Re-placed instance prealpha/data_memory/mem_reg[50][9]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[50]_22[9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.249 | TNS=-2237.301 |
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_16__14_n_0.  Did not re-place instance prealpha/pc/out0_i_16__14
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_16__14_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net prealpha/pc/out0_i_16__14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.244 | TNS=-2235.849 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg_n_0_[20][12].  Re-placed instance prealpha/data_memory/mem_reg[20][12]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg_n_0_[20][12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.244 | TNS=-2235.501 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg_n_0_[20][13].  Re-placed instance prealpha/data_memory/mem_reg[20][13]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg_n_0_[20][13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.244 | TNS=-2235.153 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_selection_read[22].  Re-placed instance prealpha/data_memory/mem_reg[20][6]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_selection_read[22]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.244 | TNS=-2234.805 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg_n_0_[20][9].  Re-placed instance prealpha/data_memory/mem_reg[20][9]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg_n_0_[20][9]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.244 | TNS=-2234.457 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[7][15]_0[15].  Re-placed instance prealpha/regfile/base_reg/mem_reg[7][15]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[7][15]_0[15]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.243 | TNS=-2234.339 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[15].  Re-placed instance prealpha/regfile/base_reg/mem_reg[6][15]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[15]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.237 | TNS=-2234.179 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[34]_38[0].  Re-placed instance prealpha/data_memory/mem_reg[34][0]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[34]_38[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.237 | TNS=-2234.162 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/mem_reg[34]_38[12].  Did not re-place instance prealpha/data_memory/mem_reg[34][12]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/mem_reg[34]_38[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[3].  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[3]
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/pc/mem[46][15]_i_2_n_0.  Re-placed instance prealpha/pc/mem[46][15]_i_2
+INFO: [Physopt 32-735] Processed net prealpha/pc/mem[46][15]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.231 | TNS=-2215.090 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[8].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][8]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_14__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/out0_i_35__0_n_0.  Did not re-place instance prealpha/data_memory/out0_i_35__0
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_35__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[0].  Did not re-place instance prealpha/pc/out0_i_1__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_8__13_n_0.  Did not re-place instance prealpha/pc/out0_i_8__13
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_8__13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_9__12_n_0.  Did not re-place instance prealpha/pc/out0_i_9__12
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_9__12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_16__14_n_0.  Did not re-place instance prealpha/pc/out0_i_16__14
+INFO: [Physopt 32-735] Processed net prealpha/pc/out0_i_16__14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.231 | TNS=-2213.002 |
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[7].  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[7]
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_26_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[3].  Did not re-place instance prealpha/pc/out0_i_1__13
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_6__10_n_0.  Did not re-place instance prealpha/pc/out0_i_6__10
+INFO: [Physopt 32-735] Processed net prealpha/pc/out0_i_6__10_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.225 | TNS=-2176.628 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[3][15]_0[1].  Re-placed instance prealpha/regfile/base_reg/mem_reg[3][1]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[3][15]_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.222 | TNS=-2176.397 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/mem_reg[0][15]_0[15].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[0][15]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/mem_reg[0][15]_0[15]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/pc/M_alu_out[13].  Re-placed instance prealpha/pc/out0_i_1__5
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_alu_out[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.219 | TNS=-2175.677 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_input0_read_data[9].  Did not re-place instance prealpha/data_memory/mem_reg[0][9]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/M_data_memory_input0_read_data[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_3_out.  Did not re-place instance prealpha/pc/mem[0][15]_i_3_comp_1
+INFO: [Physopt 32-735] Processed net prealpha/pc/p_3_out. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.218 | TNS=-2173.245 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[10].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][10]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_10__7_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_9__7_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.209 | TNS=-2173.173 |
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_9__7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/out0_i_24__8_n_0.  Re-placed instance prealpha/data_memory/out0_i_24__8
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_24__8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.192 | TNS=-2172.973 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_selection_read[7].  Re-placed instance prealpha/data_memory/mem_reg[19][7]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_selection_read[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.186 | TNS=-2175.250 |
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_17__14_n_0.  Did not re-place instance prealpha/pc/out0_i_17__14
+INFO: [Physopt 32-735] Processed net prealpha/pc/out0_i_17__14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.185 | TNS=-2174.058 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/mem_reg_n_0_[25][11].  Did not re-place instance prealpha/data_memory/mem_reg[25][11]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/mem_reg_n_0_[25][11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/mem[25][15]_i_2_n_0.  Did not re-place instance prealpha/pc/mem[25][15]_i_2
+INFO: [Physopt 32-735] Processed net prealpha/pc/mem[25][15]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.185 | TNS=-2157.866 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/Q[4].  Re-placed instance prealpha/regfile/base_reg/mem_reg[5][4]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/Q[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.184 | TNS=-2157.848 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[0][3]_lopt_replica_1.  Re-placed instance prealpha/regfile/base_reg/mem_reg[0][3]_lopt_replica
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[0][3]_lopt_replica_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.183 | TNS=-2157.607 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[14].  Re-placed instance prealpha/regfile/base_reg/mem_reg[2][14]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[2][15]_0[14]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.181 | TNS=-2157.439 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[14].  Re-placed instance prealpha/regfile/base_reg/mem_reg[6][14]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[14]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.178 | TNS=-2157.280 |
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_19__14_n_0.  Did not re-place instance prealpha/pc/out0_i_19__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_19__14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0].  Did not re-place instance prealpha/bsel_mux_gen_0[0].bsel_mux/out0
+INFO: [Physopt 32-702] Processed net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_7_0.  Did not re-place instance prealpha/pc/out0_i_3__1
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_7_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_ra2sel_mux_out[1].  Did not re-place instance prealpha/pc/out0_i_8
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_ra2sel_mux_out[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.171 | TNS=-2146.151 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[7][15]_0[4].  Re-placed instance prealpha/regfile/base_reg/mem_reg[7][4]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[7][15]_0[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.170 | TNS=-2146.136 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[4].  Re-placed instance prealpha/regfile/base_reg/mem_reg[6][4]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[6][15]_0[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.169 | TNS=-2146.121 |
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8].  Did not re-place instance prealpha/data_memory/mem_reg[29][8]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_7_out.  Did not re-place instance prealpha/pc/mem[29][15]_i_3_comp
+INFO: [Physopt 32-702] Processed net prealpha/pc/p_7_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/mem[29][15]_i_4_n_0.  Did not re-place instance prealpha/pc/mem[29][15]_i_4
+INFO: [Physopt 32-702] Processed net prealpha/pc/mem[29][15]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[5].  Did not re-place instance prealpha/pc/out0_i_4__4
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_13__14_n_0.  Did not re-place instance prealpha/pc/out0_i_13__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_13__14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_35__1_n_0.  Did not re-place instance prealpha/pc/out0_i_35__1
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_35__1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_16__13_n_0.  Did not re-place instance prealpha/pc/out0_i_16__13
+INFO: [Physopt 32-735] Processed net prealpha/pc/out0_i_16__13_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.168 | TNS=-2144.354 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.168 | TNS=-2144.354 |
+Phase 3 Critical Path Optimization | Checksum: 17d7922b6
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:23 . Memory (MB): peak = 1514.711 ; gain = 9.086
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.168 | TNS=-2144.354 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[4][15]_0[4].  Re-placed instance prealpha/regfile/base_reg/mem_reg[4][4]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[4][15]_0[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.167 | TNS=-2144.184 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[8].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][8]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[5]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.167 | TNS=-2143.752 |
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[4].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][4]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[7]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.166 | TNS=-2144.455 |
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[6]. Replicated 5 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.165 | TNS=-2137.501 |
+INFO: [Physopt 32-572] Net prealpha/pc/M_pc_ia[7] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[7].  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[7]
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_14__1_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/out0_i_14__1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.153 | TNS=-2136.469 |
+INFO: [Physopt 32-81] Processed net prealpha/pc/M_pc_ia[6]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.152 | TNS=-2135.398 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/Q[3].  Re-placed instance prealpha/regfile/base_reg/mem_reg[5][3]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/Q[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.151 | TNS=-2135.340 |
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_14__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/out0_i_35__0_n_0.  Did not re-place instance prealpha/data_memory/out0_i_35__0
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_35__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/M_alu_out[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[0].  Did not re-place instance prealpha/pc/out0_i_1__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_8__13_n_0.  Did not re-place instance prealpha/pc/out0_i_8__13
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_8__13_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_8__13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_9__12_n_0.  Did not re-place instance prealpha/pc/out0_i_9__12
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_9__12_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_9__12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_19__14_n_0.  Did not re-place instance prealpha/pc/out0_i_19__14
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_19__14_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_19__14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0].  Did not re-place instance prealpha/bsel_mux_gen_0[0].bsel_mux/out0
+INFO: [Physopt 32-572] Net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/M_ctl_bsel was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_ctl_bsel.  Did not re-place instance prealpha/pc/out0_i_5
+INFO: [Physopt 32-572] Net prealpha/pc/M_ctl_bsel was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_ctl_bsel. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.148 | TNS=-2130.157 |
+INFO: [Physopt 32-601] Processed net prealpha/pc/M_pc_ia[5]_repN_4. Net driver prealpha/pc/M_pc_reg_q_reg[5]_replica_4 was replaced.
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_pc_ia[5]_repN_4. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.146 | TNS=-2126.559 |
+INFO: [Physopt 32-572] Net prealpha/pc/M_pc_ia[3] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[3].  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[3]
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_7_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_7_0.  Did not re-place instance prealpha/pc/out0_i_3__1
+INFO: [Physopt 32-81] Processed net prealpha/pc/out0_i_7_0. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net prealpha/pc/out0_i_7_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.138 | TNS=-2114.226 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[4][15]_0[12].  Re-placed instance prealpha/regfile/base_reg/mem_reg[4][12]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[4][15]_0[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.137 | TNS=-2114.059 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[1][3]_lopt_replica_1.  Re-placed instance prealpha/regfile/base_reg/mem_reg[1][3]_lopt_replica
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[1][3]_lopt_replica_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.130 | TNS=-2114.021 |
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_7_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_7_0.  Did not re-place instance prealpha/pc/out0_i_3__1
+INFO: [Physopt 32-572] Net prealpha/pc/out0_i_7_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_7_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net prealpha/pc/M_ra2sel_mux_out[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_ra2sel_mux_out[0].  Did not re-place instance prealpha/pc/out0_i_7
+INFO: [Physopt 32-735] Processed net prealpha/pc/M_ra2sel_mux_out[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.122 | TNS=-2110.308 |
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[3].  Re-placed instance prealpha/regfile/base_reg/mem_reg[1][3]
+INFO: [Physopt 32-735] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.116 | TNS=-2110.288 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_selection_read[80].  Re-placed instance prealpha/data_memory/mem_reg[24][0]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_selection_read[80]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.116 | TNS=-2109.980 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg_n_0_[24][10].  Re-placed instance prealpha/data_memory/mem_reg[24][10]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg_n_0_[24][10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.116 | TNS=-2109.672 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg_n_0_[24][12].  Re-placed instance prealpha/data_memory/mem_reg[24][12]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg_n_0_[24][12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.116 | TNS=-2109.364 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg_n_0_[24][14].  Re-placed instance prealpha/data_memory/mem_reg[24][14]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg_n_0_[24][14]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.116 | TNS=-2109.056 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_selection_read[82].  Re-placed instance prealpha/data_memory/mem_reg[24][2]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_selection_read[82]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.116 | TNS=-2108.748 |
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_selection_read[83].  Re-placed instance prealpha/data_memory/mem_reg[24][3]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_selection_read[83]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.116 | TNS=-2108.440 |
+INFO: [Common 17-14] Message 'Physopt 32-619' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_selection_read[84].  Re-placed instance prealpha/data_memory/mem_reg[24][4]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_selection_read[84]. Optimization improves timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/M_data_memory_selection_read[85].  Re-placed instance prealpha/data_memory/mem_reg[24][5]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/M_data_memory_selection_read[85]. Optimization improves timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[0].  Re-placed instance prealpha/data_memory/mem_reg[50][0]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[50]_22[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[13].  Re-placed instance prealpha/data_memory/mem_reg[50][13]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[50]_22[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[14].  Re-placed instance prealpha/data_memory/mem_reg[50][14]
+INFO: [Physopt 32-735] Processed net prealpha/data_memory/mem_reg[50]_22[14]. Optimization improves timing on the net.
+INFO: [Common 17-14] Message 'Physopt 32-735' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[15].  Re-placed instance prealpha/data_memory/mem_reg[50][15]
+INFO: [Physopt 32-663] Processed net prealpha/data_memory/mem_reg[50]_22[4].  Re-placed instance prealpha/data_memory/mem_reg[50][4]
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8].  Did not re-place instance prealpha/data_memory/mem_reg[29][8]
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/M_data_memory_input1_read_data[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[7].  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[7]
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/p_7_out.  Did not re-place instance prealpha/pc/mem[29][15]_i_3_comp
+INFO: [Physopt 32-702] Processed net prealpha/pc/p_7_out. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/mem[29][15]_i_4_n_0.  Did not re-place instance prealpha/pc/mem[29][15]_i_4
+INFO: [Physopt 32-702] Processed net prealpha/pc/mem[29][15]_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[5].  Did not re-place instance prealpha/pc/out0_i_4__4
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_13__14_n_0.  Did not re-place instance prealpha/pc/out0_i_13__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_13__14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_35__1_n_0.  Did not re-place instance prealpha/pc/out0_i_35__1
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_35__1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_17__13_n_0.  Did not re-place instance prealpha/pc/out0_i_17__13
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_17__13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/pc/out0_i_49_n_0.  Re-placed instance prealpha/pc/out0_i_49
+INFO: [Physopt 32-663] Processed net prealpha/regfile/base_reg/mem_reg[0][15]_0[3].  Re-placed instance prealpha/regfile/base_reg/mem_reg[0][3]
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[3].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[1][3]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/mem_reg[1][15]_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_11__2_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/regfile/base_reg/Q[8].  Did not re-place instance prealpha/regfile/base_reg/mem_reg[5][8]
+INFO: [Physopt 32-702] Processed net prealpha/regfile/base_reg/Q[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_14__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_26_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/out0_i_39__0_n_0.  Did not re-place instance prealpha/data_memory/out0_i_39__0
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_39__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[1].  Did not re-place instance prealpha/pc/out0_i_1__16
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_6__8_n_0.  Did not re-place instance prealpha/pc/out0_i_6__8
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[4].  Did not re-place instance prealpha/pc/out0_i_2__16
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_8__15_n_0.  Did not re-place instance prealpha/pc/out0_i_8__15
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_pc_ia[5]_repN_4.  Did not re-place instance prealpha/pc/M_pc_reg_q_reg[5]_replica_4
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_pc_ia[5]_repN_4. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/data_memory/out0_i_35__0_n_0.  Did not re-place instance prealpha/data_memory/out0_i_35__0
+INFO: [Physopt 32-702] Processed net prealpha/data_memory/out0_i_35__0_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_alu_out[0].  Did not re-place instance prealpha/pc/out0_i_1__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_alu_out[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_8__13_n_0.  Did not re-place instance prealpha/pc/out0_i_8__13
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_8__13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_9__12_n_0.  Did not re-place instance prealpha/pc/out0_i_9__12
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_9__12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_19__14_n_0.  Did not re-place instance prealpha/pc/out0_i_19__14
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_19__14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0].  Did not re-place instance prealpha/bsel_mux_gen_0[0].bsel_mux/out0
+INFO: [Physopt 32-702] Processed net prealpha/bsel_mux_gen_0[0].bsel_mux/M_bsel_mux_out[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/out0_i_7_0.  Did not re-place instance prealpha/pc/out0_i_3__1
+INFO: [Physopt 32-702] Processed net prealpha/pc/out0_i_7_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/pc/M_ra2sel_mux_out[1].  Did not re-place instance prealpha/pc/out0_i_8
+INFO: [Physopt 32-702] Processed net prealpha/pc/M_ra2sel_mux_out[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net prealpha/instr_mem_unit/M_instr_mem_unit_id[10].  Did not re-place instance prealpha/instr_mem_unit/mem[1][15]_i_13
+INFO: [Physopt 32-702] Processed net prealpha/instr_mem_unit/M_instr_mem_unit_id[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/instr_mem_unit/mem_reg[1][15]_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net prealpha/instr_mem_unit/mem[1][15]_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net prealpha/wdsel_mux_gen_0[8].wdsel_mux/out0_i_3__16[0].  Re-placed instance prealpha/wdsel_mux_gen_0[8].wdsel_mux/out0_comp
+Phase 4 Critical Path Optimization | Checksum: 17d7922b6
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:41 . Memory (MB): peak = 1514.711 ; gain = 9.086
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1514.711 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-2.090 | TNS=-2095.563 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.746  |        186.094  |           30  |              0  |                   108  |           0  |           2  |  00:00:40  |
+|  Total          |          0.746  |        186.094  |           30  |              0  |                   108  |           0  |           3  |  00:00:40  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1514.711 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 17d7922b6
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:41 . Memory (MB): peak = 1514.711 ; gain = 9.086
+INFO: [Common 17-83] Releasing license: Implementation
+576 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:01:11 ; elapsed = 00:00:41 . Memory (MB): peak = 1514.711 ; gain = 24.051
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1514.711 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.390 . Memory (MB): peak = 1523.480 ; gain = 8.770
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/au_top_0_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 8a21cf46 ConstDB: 0 ShapeSum: eb3a5287 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 11e5fd613
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1618.031 ; gain = 80.492
+Post Restoration Checksum: NetGraph: 24010ce3 NumContArr: fa5ec930 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 11e5fd613
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1618.031 ; gain = 80.492
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 11e5fd613
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.070 ; gain = 86.531
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 11e5fd613
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.070 ; gain = 86.531
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 17da684ab
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1630.867 ; gain = 93.328
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.868 | TNS=-1598.749| WHS=-0.140 | THS=-3.911 |
+
+Phase 2 Router Initialization | Checksum: fd540390
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 1630.867 ; gain = 93.328
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 2352
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 2351
+  Number of Partially Routed Nets     = 1
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 226c358ff
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:26 . Memory (MB): peak = 1634.277 ; gain = 96.738
+INFO: [Route 35-580] Design has 2 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|                    clk_0 |                    clk_0 |                                                                           prealpha/pc/M_pc_reg_q_reg[0]/D|
+|                    clk_0 |                    clk_0 |                                                                           prealpha/pc/M_pc_reg_q_reg[2]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1253
+ Number of Nodes with overlaps = 671
+ Number of Nodes with overlaps = 365
+ Number of Nodes with overlaps = 218
+ Number of Nodes with overlaps = 171
+ Number of Nodes with overlaps = 122
+ Number of Nodes with overlaps = 61
+ Number of Nodes with overlaps = 32
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.092 | TNS=-3534.429| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1a6ea2e4b
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:01:07 . Memory (MB): peak = 1655.852 ; gain = 118.312
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 756
+ Number of Nodes with overlaps = 485
+ Number of Nodes with overlaps = 312
+ Number of Nodes with overlaps = 176
+ Number of Nodes with overlaps = 80
+ Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 31
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.186 | TNS=-3786.679| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1247cd955
+
+Time (s): cpu = 00:02:41 ; elapsed = 00:02:06 . Memory (MB): peak = 1660.508 ; gain = 122.969
+Phase 4 Rip-up And Reroute | Checksum: 1247cd955
+
+Time (s): cpu = 00:02:41 ; elapsed = 00:02:06 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 125aa424e
+
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.998 | TNS=-3435.115| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 23a7d49d0
+
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 23a7d49d0
+
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+Phase 5 Delay and Skew Optimization | Checksum: 23a7d49d0
+
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 28c07e332
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.998 | TNS=-3421.124| WHS=0.164  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 28c07e332
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+Phase 6 Post Hold Fix | Checksum: 28c07e332
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.57809 %
+  Global Horizontal Routing Utilization  = 1.90812 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 71.1712%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 72.973%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 85.2941%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X27Y86 -> INT_R_X27Y86
+West Dir 1x1 Area, Max Cong = 82.3529%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 21dda9f2e
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 21dda9f2e
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1ec6f6ec4
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-3.998 | TNS=-3421.124| WHS=0.164  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 1ec6f6ec4
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:07 . Memory (MB): peak = 1660.508 ; gain = 122.969
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+595 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:02:46 ; elapsed = 00:02:09 . Memory (MB): peak = 1660.508 ; gain = 137.027
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1660.508 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.466 . Memory (MB): peak = 1660.508 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/au_top_0_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
+Command: report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/au_top_0_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
+Command: report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/au_top_0_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
+Command: report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+607 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file au_top_0_route_status.rpt -pb au_top_0_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file au_top_0_timing_summary_routed.rpt -pb au_top_0_timing_summary_routed.pb -rpx au_top_0_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file au_top_0_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file au_top_0_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file au_top_0_bus_skew_routed.rpt -pb au_top_0_bus_skew_routed.pb -rpx au_top_0_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force au_top_0.bit -bin_file
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 13163680 bits.
+Writing bitstream ./au_top_0.bit...
+Writing bitstream ./au_top_0.bin...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Thu Dec  3 04:41:38 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+627 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2085.910 ; gain = 405.637
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  3 04:41:38 2020...
+[Thu Dec  3 04:41:45 2020] impl_1 finished
+wait_on_run: Time (s): cpu = 00:00:01 ; elapsed = 00:05:16 . Memory (MB): peak = 333.387 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  3 04:41:45 2020...
+
+Finished building project.

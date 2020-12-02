@@ -1,0 +1,26 @@
+module button_regulator (
+
+    // Button regulator. Allows for refreshing
+    
+    input clk,  // clock
+    input in, // raw button input
+    input input_read[16], // input read
+    output write_en, // write enable bit
+    output out[16] // Input write data
+  ) {
+  
+  input_regulator regulator(.clk(clk));
+  buffer map;
+
+  always {
+  
+    regulator.inp = in; // Feed raw input to regulator
+    map.in = regulator.map_inp; // Feed input to mapper
+    regulator.map_out[0] = map.out; // Feed mapper output to regulator
+    regulator.map_out[15:1] = 15b0;
+    regulator.input_read = input_read; // Feed input read to regulator
+    write_en = regulator.input_write_enable; // Output write enable
+    out = regulator.input_write_data; // Output write data
+    
+  }
+}

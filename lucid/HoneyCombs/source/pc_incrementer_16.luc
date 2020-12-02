@@ -1,0 +1,21 @@
+module pc_incrementer_16 (
+
+    // Module to increment unsigned 16-bit number by 1 (word addressing) using a half-adder
+    
+    input in[16], // 16-bit input
+    output out[16] // 16-bit output
+  ) {
+
+  sig cout[15]; // carry-out values for intermediate calculations
+  
+  always {
+    
+    // Add 1 to LSB
+    out[0] = in[0] ^ 1b1;
+    cout[0] = in[0] & 1b1;
+    
+    // Perform ripple-carry half-adder operation
+    out[15:1] = in[15:1] ^ cout[14:0];
+    cout[14:1] = in[14:1] & cout[13:0];
+  }
+}
