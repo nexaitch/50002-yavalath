@@ -1,0 +1,393 @@
+.include prealpha.uasm
+
+GRID_SIZE = 9
+
+input = 0
+submit = 29
+player_0 = 1
+player_1 = 10
+selected = 19
+turn = 28
+valid = 32
+working = 41
+
+| input constants
+UP = 2
+DOWN = 16
+LEFT = 8
+RIGHT = 1
+UP_LEFT = 4
+DOWN_RIGHT = 32
+
+.macro IS_IN(RA, RB, LABEL, RC, RROW) { | computes LABEL[RA] & (1 << RB) and stores it in RC.
+       		     	    	      	| RROW is a temp register
+       MOVC(1, RC)   	    	      	| RC = 1
+       SHL(RC, RB, RC)			| RC <<= RB
+       LD(RA, LABEL, RROW)		| RROW = LABEL[RA]
+       AND(RC, RROW, RC)		| RC &= RROW
+       }
+
+
+
+start_of_code:
+reset: | R0 = i, R1 = temporary register
+|MOVC(0, R0)				| i = 0
+|reset_while:				| while (i != GRID_SIZE)
+|	ADDC(R0, -GRID_SIZE, R1)
+|	BF(R1, reset_while_end)
+|	ST(R7, player_0, R0)		| player_0[i] = 0
+|	ST(R7, player_1, R0) 		| player_1[i] = 0
+|	ST(R7, selected, R0) 		| selected[i] = 0
+|	ADDC(R0, 1, R0)	    	  	| ++i
+|	BR(reset_while)    	  	| loop
+|reset_while_end:			| end while
+
+| R0 = row
+| R1 = col
+start_turn:
+LD(R7, turn, R0)
+BF(R0, change_turn_player_1)
+MOVC(0, R0)
+BR(change_turn_end)
+change_turn_player_1:
+MOVC(1, R0)
+change_turn_end:
+ST(R0, turn, R7)
+
+MOVC(4, R0)		| r = 4
+MOVC(4, R1)		| c = 4
+
+select_square:
+| select the correct square
+MOVC(1, R2)
+SHL(R2, R1, R2)		| R2 = 1 << c
+ST(R2, selected, R0)	| selected[r] = 1 << c
+
+| input handling here (should probs make sure that your input doesn't make you go out of bounds here)
+handle_input: | while input == 0 {}
+LD(R7, submit, R2)
+BF(R2, submit_not_pressed)
+
+| if submit pressed
+ST(R7, submit, R7) | store a 0 into submit
+BR(check_unoccupied)
+
+submit_not_pressed:
+LD(R7, input, R3)
+BF(R3, handle_input)
+
+| store a 0 into the input
+ST(R7, input, R7)
+
+| input format: [3:2] dx+2, [1:0] dy+2
+direction_inputs:
+MOVC(0b11, R2)
+AND(R2, R3, R2) | new_row = input & 0b11
+SHRC(R3, 2, R3) | input >>= 2
+ADD(R1, R3, R3) | new_col = col + input
+ADD(R0, R2, R2) | new_row += row
+ADDC(R2, -2, R2)| new_row -= 2
+ADDC(R3, -2, R3)| new_col -= 2
+
+| check if location is within bounds (i.e. r and c not -1 or GRID_SIZE)
+ADDC(R2, 1, R4)
+BF(R4,handle_input)
+ADDC(R2, -GRID_SIZE, R4)
+BF(R4,handle_input)
+ADDC(R3, 1, R4)
+BF(R4,handle_input)
+ADDC(R3, -GRID_SIZE, R4)
+BF(R4,handle_input)
+
+| check if square is valid
+IS_IN(R2, R3, valid, R4, R5)
+BF(R4, handle_input)
+
+| delete selected[row] (will update again at top of loop)
+ST(R7, selected, R0)
+| update row, col
+MOV(R2, R0)
+MOV(R3, R1)
+BR(select_square)
+
+| when confirm_button_pressed
+check_unoccupied:
+IS_IN(R0, R1, player_0, R2, R3) | R2 = is_in(r, c, player_0)
+BF(R2, check_p1)	    	| if (R2) goto handle_input
+BR(handle_input)
+check_p1:
+IS_IN(R0, R1, player_1, R2, R3) | R2 = is_in(r, c, player_1)
+BF(R2, insert_move)	    	| if (R2) goto handle_input
+BR(handle_input)
+
+insert_move:
+
+| clear selected[row]
+ST(R7, selected, R0)
+
+MOVC(1, R2)
+SHL(R2, R1, R2)			| R2 = 1 << c
+LD(R7, turn, R3)		| R3 = turn
+BF(R3, insert_0)
+
+insert_1:
+	LD(R0, player_1, R4) | R4 = player_1[row]
+	ADD(R4, R2, R4)	    	| R4 += 1 << c
+	ST(R4, player_1, R0)	| player_1[row] = R4
+	MOVC(player_1, R4)	| R4
+	BR(insert_end)
+
+insert_0:
+	LD(R0, player_0, R4) | likewise
+	ADD(R4, R2, R4)
+	ST(R4, player_0, R0)
+	MOVC(player_0, R4)
+insert_end:
+
+||| THIS IS A REALLY SHITTY WORKAROUND
+||| BECAUSE OUR CONSTANTS ARE A BIT TOO SHORT
+||| WE BRANCH HERE WHEN WE WANT TO RETURN
+||| TO THE START OF TURN
+BR(end_shitty_workaround)
+shitty_workaround: BR(start_turn)
+end_shitty_workaround:
+
+
+| R4 stores board number
+| R5 stores (2 bits) col: 10 row: 01 diag: 00 (4 bits) row number
+| R6 stores column information (bitmask)
+check_rows:
+
+MOVC(0, R6)
+
+col2:
+MOVC(0, R0) | i = 0
+col2_while:
+	ADDC(R0, -(GRID_SIZE-1), R1)	| while (i != GRID_SIZE - 1)
+	BF(R1, col2_while_end)
+	ADD(R4, R0, R1)			| R1 = board + i
+	ADDC(R1, 1, R2)			| R2 = board + i + 1
+	LD(R1, 0, R1)			| R1 = *R1
+	LD(R2, 0, R2)			| R2 = *R2
+	AND(R1, R2, R1)			| R1 = board[i] & board[i+1]
+	ST(R1, working, R0)		| working[i] = R1
+	ADDC(R0, 1, R0)			| ++i
+	BR(col2_while)			| end while
+col2_while_end:
+
+col4:
+MOVC(0, R0)
+col4_while:
+	ADDC(R0, -(GRID_SIZE-3), R1)	| while (i != GRID_SIZE - 3)
+	BF(R1, col4_while_end)
+	ADDC(R0, 2, R1)			| R1 = i + 2
+	LD(R0, working, R2)		| R2 = working[i]
+	LD(R1, working, R1)		| R1 = working[i+2]
+	AND(R1, R2, R1)			| R1 = working[i] & working[i+2]
+	BF(R1, col4_if_end)		| if (R1)
+	       ST(R1, selected, R0)	| selected[i]=R1
+	       ADDC(R0, 1, R0)
+	       ST(R1, selected, R0)	| selected[i+1]=R1
+	       ADDC(R0, 1, R0)
+	       ST(R1, selected, R0)	| selected[i+2]=R1
+	       ADDC(R0, 1, R0)
+	       ST(R1, selected, R0)	| selected[i+3]=R1
+	       BR(won)		| goto game over
+	col4_if_end:			| end if
+	ADDC(R0, 1, R0)			| ++i
+	BR(col4_while)			| end while
+col4_while_end:
+
+col3:
+MOVC(0, R0)
+col3_while:
+	ADDC(R0, -(GRID_SIZE-2), R1)	| while (i != GRID_SIZE - 2)
+	BF(R1, col3_while_end)
+	ADDC(R0, 1, R1)			| R1 = i + 1
+	LD(R0, working, R2)		| R2 = working[i]
+	LD(R1, working, R1)		| R1 = working[i+1]
+	AND(R1, R2, R1)			| R1 = working[i] & working[i+1]
+	BF(R1, col3_if_end)		| if (R1)
+		MOVC(0b100000, R5)	| actually moves 0xFFE0 but we and it with a mask later so not an issue
+		ADD(R5, R0, R5)
+		MOV(R1, R6)
+	       BR(col3_while_end)	| break
+	col3_if_end:			| end if
+	ADDC(R0, 1, R0)			| ++i
+	BR(col3_while)			| end while
+col3_while_end:
+
+row2:
+MOVC(0, R0) | i = 0
+row2_while:
+	ADDC(R0, -(GRID_SIZE), R1)	| while (i != GRID_SIZE)
+	BF(R1, row2_while_end)
+	ADD(R4, R0, R1)			| R1 = board + i
+	LD(R1, 0, R1)			| R1 = *R1
+	MOVC(1, R2)
+	SHL(R1, R2, R2)			| R2 = R1<<1
+	AND(R1, R2, R1)			| R1 = board[i] & (board[i] << 1)
+	ST(R1, working, R0)		| working[i] = R1
+	ADDC(R0, 1, R0)			| ++i
+	BR(row2_while)			| end while
+row2_while_end:
+
+row4:
+MOVC(0, R0)
+row4_while:
+	ADDC(R0, -(GRID_SIZE), R1)	| while (i != GRID_SIZE)
+	BF(R1, row4_while_end)
+	LD(R0, working, R1)		| R1 = working[i]
+	MOVC(2, R2)
+	SHL(R1, R2, R2)			| R2 = working[i] << 2
+	AND(R1, R2, R1)			| R1 = working[i] & (working[i] << 2)
+	BF(R1, row4_if_end)		| if (R1)
+	       SHRC(R1, 1, R2)
+	       ADD(R2, R1, R1)			| R1 += R1 >> 1
+	       SHRC(R1, 2, R2)
+	       ADD(R2, R1, R1)			| R1 += R1 >> 2
+	       ST(R1, selected, R0)		| selected[i] = R1
+	       BR(won)			| skip all other checks
+	row4_if_end:			| end if
+	ADDC(R0, 1, R0)			| ++i
+	BR(row4_while)			| end while
+row4_while_end:
+
+row3:
+MOVC(0, R0)
+row3_while:
+	ADDC(R0, -(GRID_SIZE), R1)	| while (i != GRID_SIZE)
+	BF(R1, row3_while_end)
+	LD(R0, working, R1)		| R1 = working[i]
+	MOVC(1, R2)
+	SHL(R1, R2, R2)			| R2 = working[i] << 1
+	AND(R1, R2, R1)			| R1 = working[i] & (working[i] << 1)
+	BF(R1, row3_if_end)		| if (R1)
+		MOVC(0b010000, R5)
+		ADD(R5, R0, R5)
+		MOV(R1, R6)
+	        BR(row3_while_end)	| break
+	row3_if_end:			| end if
+	ADDC(R0, 1, R0)			| ++i
+	BR(row3_while)			| end while
+row3_while_end:
+| TODO check rows and diagonals
+
+diag2:
+MOVC(0, R0) | i = 0
+diag2_while:
+	ADDC(R0, -(GRID_SIZE-1), R1)	| while (i != GRID_SIZE - 1)
+	BF(R1, diag2_while_end)
+	ADD(R4, R0, R1)			| R1 = board + i
+	ADDC(R1, 1, R2)			| R2 = board + i + 1
+	LD(R1, 0, R1)			| R1 = *R1
+	LD(R2, 0, R2)			| R2 = *R2
+	MOVC(1, R3)
+	SHL(R1, R3, R1)			| R1 <<= 1
+	AND(R1, R2, R1)			| R1 = board[i]<<1 & board[i+1]
+	ST(R1, working, R0)		| working[i] = R1
+	ADDC(R0, 1, R0)			| ++i
+	BR(diag2_while)			| end while
+diag2_while_end:
+
+diag4:
+MOVC(0, R0)
+diag4_while:
+	ADDC(R0, -(GRID_SIZE-3), R1)	| while (i != GRID_SIZE - 3)
+	BF(R1, diag4_while_end)
+	ADDC(R0, 2, R1)			| R1 = i + 2
+	LD(R0, working, R2)		| R2 = working[i]
+	LD(R1, working, R1)		| R1 = working[i+1]
+	MOVC(2, R3)
+	SHL(R2, R3, R2)			| R2 <<= 2
+	AND(R1, R2, R1)			| R1 = (working[i]<<2) & working[i+2]
+	BF(R1, diag4_if_end)		| if (R1)
+	       ADDC(R0, 3, R0)
+	       ST(R1, selected, R0)	| selected[i+3] = R1
+	       ADDC(R0, -1, R0)
+	       SHRC(R1, 1, R1)
+	       ST(R1, selected, R0)	| selected[i+2] = R1>>1
+	       ADDC(R0, -1, R0)
+	       SHRC(R1, 1, R1)
+	       ST(R1, selected, R0)	| selected[i+1] = R1>>2
+	       ADDC(R0, -1, R0)
+	       SHRC(R1, 1, R1)
+	       ST(R1, selected, R0)	| selected[i] = R1>>3
+	       BR(won)
+	diag4_if_end:			| end if
+	ADDC(R0, 1, R0)			| ++i
+	BR(diag4_while)			| end while
+diag4_while_end:
+
+diag3:
+MOVC(0, R0)
+diag3_while:
+	ADDC(R0, -(GRID_SIZE-2), R1)	| while (i != GRID_SIZE - 2)
+	BF(R1, diag3_while_end)
+	ADDC(R0, 1, R1)			| R1 = i + 1
+	LD(R0, working, R2)		| R2 = working[i]
+	LD(R1, working, R1)		| R1 = working[i+1]
+	MOVC(1, R3)
+	SHL(R2, R3, R2)			| R2 <<= 1
+	AND(R1, R2, R1)			| R1 = (working[i]<<1) & working[i+1]
+	BF(R1, diag3_if_end)		| if (R1)
+
+		MOVC(0, R5)
+		ADD(R5, R0, R5)
+		MOV(R1, R6)
+	        BR(diag3_while_end)	| break
+	diag3_if_end:			| end if
+	ADDC(R0, 1, R0)			| ++i
+	BR(diag3_while)			| end while
+diag3_while_end:
+| if no 3 in a rows were made, restart turn
+BF(R6, shitty_workaround)
+
+|prealphaop(9,0,0,0)
+
+MOV(R6, R1)
+MOVC(0xF, R0)
+AND(R0, R5, R0)
+MOVC(0x3, R2)
+SHRC(R5, 4, R5)
+AND(R2, R5, R2)
+
+|prealphaop(9,0,0,0)
+
+BF(R2, lose_diag_3)
+ADDC(R2, -1, R2)
+BF(R2, lose_row_3)
+
+lose_col_3:
+ST(R1, selected, R0)
+ADDC(R0, 1, R0)
+ST(R1, selected, R0)
+ADDC(R0, 1, R0)
+ST(R1, selected, R0)
+
+BR(lost)
+
+lose_row_3:
+SHRC(R1, 1, R2)
+ADD(R1, R2, R1)
+SHRC(R2, 1, R2)
+ADD(R1, R2, R1)
+ST(R1, selected, R0)
+
+BR(lost)
+
+lose_diag_3:
+ADDC(R0, 2, R0)
+ST(R1, selected, R0)
+ADDC(R0, -1, R0)
+SHRC(R1, 1, R1)
+ST(R1, selected, R0)
+ADDC(R0, -1, R0)
+SHRC(R1, 1, R1)
+ST(R1, selected, R0)
+
+BR(lost)
+won:
+lost:
+game_over:
+BR(game_over)

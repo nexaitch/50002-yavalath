@@ -1,0 +1,87 @@
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||| 50.002 PREALPHA Macro package -                                  |||
+|||  This file defines our 32-bit Pre-alpha instruction set.         |||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+| Global instruction definition conventions:
+|  * DESTINATION arg is LAST
+
+| Instruction set summary.  Notation:
+| ra, rb, rc: registers
+|         CC: 16-bit signed constant
+|      label: statement/location tag (becomes PC-relative offset)
+
+| Instructions marked with * can be implemented as a sequence of 2 instructions,
+| if we use a temporary register to hold the constant.
+| We initialise this constant with ADDC.
+| We can even avoid ADDC, if we hardcode all constants in code somewhere.
+| They're nice to have, given that we have 8 registers,
+| 4 of which are taken for 0, sp, lp, bp
+| (no xp bc our code is flawless and has no bugs).
+
+| ADD(RA, RB, RC)		 | RC <- <RA> + <RB>
+| ADDC(RA, C, RC)		 | RC <- <RA> + C
+| AND(RA, RB, RC)		 | RC <- <RA> & <RB>
+|*ANDC(RA, C, RC)		 | RC <- <RA> & C
+| SHL(RA, RB, RC)		 | RC <- <RA> << <RB>
+|*SHLC(RA, C, RC)		 | RC <- <RA> << C
+| BNE(RA, LABEL, RC)		 | RC <- PC+4; if (<RA>!=0) then PC <- LABEL
+| ST(RC, CC, RA) 		 | Mem[<RA>+CC] <- RC
+| LD(RA, CC, RC)		 | RC <- Mem[<RA>+RC]
+
+| Assemble words, little-endian:
+.macro WORD(x) x%0x100 (x>>8)%0x100
+.macro LONG(x) WORD(x) WORD(x >> 16)	| little-endian for Maybe
+
+| register designators
+
+r0 = 0
+r1 = 1
+r2 = 2
+r3 = 3
+r4 = 4
+r5 = 5
+r6 = 6
+r7 = 7
+
+R0 = r0
+R1 = r1
+R2 = r2
+R3 = r3
+R4 = r4
+R5 = r5
+R6 = r6
+R7 = r7
+
+| assuming 4 bit opcodes, might need to cut to 3 if we want to have 7 bit constants
+
+| op  rc ra rb
+| op  rc ra c
+| 5432109876543210
+
+.macro prealphaop(OP, RA, RB, RC) {
+       .align 2
+       WORD((OP<<12)+((RC%8)<<9)+((RA%8)<<6)+((RB%8)<<3))
+       }
+
+.macro prealphaopc(OP, RA, C, RC) {
+       .align 2
+       WORD((OP<<12)+((RC%8)<<9)+((RA%8)<<6)+(C%0x40))
+       }
+
+.macro branchop(OP, RC, C) {
+       .align 2
+       WORD((OP<<12)+((RC%8)<<9)+(C%0x200))}
+
+.macro ADD(RA, RB, RC)		prealphaop(1, RA, RB, RC)
+.macro SHL(RA, RB, RC)		prealphaop(2, RA, RB, RC)
+.macro AND(RA, RB, RC)		prealphaop(3, RA, RB, RC)
+.macro ADDC(RA, C, RC)		prealphaopc(4, RA, C, RC)
+.macro LD(RA, C, RC)		prealphaopc(5, RA, C, RC)
+.macro ST(RC, C, RA)		prealphaopc(6, RA, C, RC)
+.macro BF(RC, LABEL) 		branchop(7, RC, ((LABEL-.)>>1)-1)
+.macro BR(LABEL)		BF(R7, LABEL)
+.macro SHRC(RA, C, RC)		prealphaopc(8, RA, C, RC)
+
+.macro MOV(RA, RC)		ADD(RA, R7, RC)
+.macro MOVC(C, RC)		ADDC(R7, C, RC)
