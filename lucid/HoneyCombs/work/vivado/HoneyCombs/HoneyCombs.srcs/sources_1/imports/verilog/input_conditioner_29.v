@@ -14,10 +14,7 @@
 module input_conditioner_29 (
     input clk,
     input [0:0] in,
-    output reg [0:0] out,
-    output reg [0:0] debug1,
-    output reg [0:0] debug2,
-    output reg [0:0] debug3
+    output reg [0:0] out
   );
   
   localparam PIPELINE_CYCLE_COUNT = 3'h5;
@@ -114,18 +111,15 @@ module input_conditioner_29 (
     M_out_select_inp0 = 1'h0;
     M_out_select_inp1 = M_input_tracker_q;
     out = M_out_select_out;
-    debug1 = M_pipeline_out;
-    debug2 = in;
-    debug3 = {5'h18{~((|(M_counter_q ^ 25'h098967b)))}};
   end
-  
-  always @(posedge clk) begin
-    M_input_tracker_q <= M_input_tracker_d;
-  end
-  
   
   always @(posedge clk) begin
     M_counter_q <= M_counter_d;
+  end
+  
+  
+  always @(posedge clk) begin
+    M_input_tracker_q <= M_input_tracker_d;
   end
   
 endmodule

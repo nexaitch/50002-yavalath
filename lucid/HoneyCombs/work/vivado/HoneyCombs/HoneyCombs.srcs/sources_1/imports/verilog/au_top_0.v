@@ -13,8 +13,7 @@ module au_top_0 (
     input button,
     output reg [8:0] row,
     output reg [17:0] column,
-    output reg [1:0] turn,
-    output reg [7:0] io_led
+    output reg [1:0] turn
   );
   
   
@@ -25,7 +24,6 @@ module au_top_0 (
   wire [9-1:0] M_prealpha_player0;
   wire [9-1:0] M_prealpha_player1;
   wire [2-1:0] M_prealpha_turn;
-  wire [8-1:0] M_prealpha_debug_read;
   reg [4-1:0] M_prealpha_joystick;
   reg [1-1:0] M_prealpha_button;
   prealpha_1 prealpha (
@@ -36,8 +34,7 @@ module au_top_0 (
     .rows(M_prealpha_rows),
     .player0(M_prealpha_player0),
     .player1(M_prealpha_player1),
-    .turn(M_prealpha_turn),
-    .debug_read(M_prealpha_debug_read)
+    .turn(M_prealpha_turn)
   );
   
   wire [1-1:0] M_reset_cond_out;
@@ -58,6 +55,5 @@ module au_top_0 (
     column[0+8-:9] = M_prealpha_player0;
     column[9+8-:9] = M_prealpha_player1;
     turn = M_prealpha_turn;
-    io_led[0+7-:8] = M_prealpha_debug_read;
   end
 endmodule

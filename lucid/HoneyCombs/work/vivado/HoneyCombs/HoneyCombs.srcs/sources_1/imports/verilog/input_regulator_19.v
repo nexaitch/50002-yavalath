@@ -32,16 +32,10 @@ module input_regulator_19 (
   
   
   wire [4-1:0] M_conditioner_out;
-  wire [4-1:0] M_conditioner_debug1;
-  wire [4-1:0] M_conditioner_debug2;
-  wire [4-1:0] M_conditioner_debug3;
   input_conditioner_27 conditioner (
     .clk(clk),
     .in(inp),
-    .out(M_conditioner_out),
-    .debug1(M_conditioner_debug1),
-    .debug2(M_conditioner_debug2),
-    .debug3(M_conditioner_debug3)
+    .out(M_conditioner_out)
   );
   
   reg [25:0] M_counter_d, M_counter_q = 1'h0;

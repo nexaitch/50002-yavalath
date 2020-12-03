@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Thu Dec  3 04:41:18 2020
+| Date             : Thu Dec  3 06:15:42 2020
 | Host             : DESKTOP-QSFIJ7U running 64-bit major release  (build 9200)
 | Command          : report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
 | Design           : au_top_0
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.121        |
+| Total On-Chip Power (W)  | 0.115        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.049        |
+| Dynamic (W)              | 0.043        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 4.9          |
 | Max Ambient (C)          | 84.4         |
@@ -49,22 +49,23 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.004 |        3 |       --- |             --- |
-| Slice Logic             |     0.008 |     2795 |       --- |             --- |
-|   LUT as Logic          |     0.008 |     1173 |     20800 |            5.64 |
-|   F7/F8 Muxes           |    <0.001 |      143 |     32600 |            0.44 |
-|   Register              |    <0.001 |     1358 |     41600 |            3.26 |
-|   CARRY4                |    <0.001 |        7 |      8150 |            0.09 |
-|   LUT as Shift Register |    <0.001 |        6 |      9600 |            0.06 |
-|   Others                |     0.000 |       29 |       --- |             --- |
-| Signals                 |     0.017 |     2352 |       --- |             --- |
-| I/O                     |     0.020 |       45 |       170 |           26.47 |
-| Static Power            |     0.072 |          |           |                 |
-| Total                   |     0.121 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.004 |        3 |       --- |             --- |
+| Slice Logic              |     0.007 |     2615 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     1012 |     20800 |            4.87 |
+|   F7/F8 Muxes            |    <0.001 |      225 |     32600 |            0.69 |
+|   LUT as Distributed RAM |    <0.001 |       24 |      9600 |            0.25 |
+|   Register               |    <0.001 |     1215 |     41600 |            2.92 |
+|   CARRY4                 |    <0.001 |        7 |      8150 |            0.09 |
+|   LUT as Shift Register  |    <0.001 |        6 |      9600 |            0.06 |
+|   Others                 |     0.000 |       29 |       --- |             --- |
+| Signals                  |     0.011 |     1977 |       --- |             --- |
+| I/O                      |     0.022 |       37 |       170 |           21.76 |
+| Static Power             |     0.072 |          |           |                 |
+| Total                    |     0.115 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -73,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.039 |       0.029 |      0.010 |
+| Vccint    |       1.000 |     0.031 |       0.022 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
 | Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,14 +143,14 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| au_top_0           |     0.049 |
-|   prealpha         |     0.029 |
-|     data_memory    |     0.005 |
+| au_top_0           |     0.043 |
+|   prealpha         |     0.021 |
+|     data_memory    |     0.004 |
 |     input_printer  |     0.002 |
 |     instr_mem_unit |     0.003 |
-|     pc             |     0.016 |
-|     regfile        |     0.001 |
-|       base_reg     |     0.001 |
+|     pc             |     0.008 |
+|     regfile        |     0.003 |
+|       base_reg     |     0.003 |
 +--------------------+-----------+
 
 

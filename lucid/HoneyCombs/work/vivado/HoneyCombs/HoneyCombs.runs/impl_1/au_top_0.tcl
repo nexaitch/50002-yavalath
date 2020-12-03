@@ -69,13 +69,13 @@ set rc [catch {
   create_project -in_memory -part xc7a35tftg256-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.cache/wt [current_project]
-  set_property parent.project_path C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.xpr [current_project]
-  set_property ip_output_repo C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.cache/wt [current_project]
+  set_property parent.project_path C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.xpr [current_project]
+  set_property ip_output_repo C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.dcp
-  read_xdc C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc
-  read_xdc C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc
+  add_files -quiet C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.dcp
+  read_xdc C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/constraint/custom.xdc
+  read_xdc C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/constraint/custom.xdc
   link_design -top au_top_0 -part xc7a35tftg256-1
   close_msg_db -file init_design.pb
 } RESULT]

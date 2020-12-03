@@ -12,8 +12,7 @@ module prealpha_1 (
     output reg [8:0] rows,
     output reg [8:0] player0,
     output reg [8:0] player1,
-    output reg [1:0] turn,
-    output reg [7:0] debug_read
+    output reg [1:0] turn
   );
   
   
@@ -61,8 +60,6 @@ module prealpha_1 (
   wire [16-1:0] M_regfile_rd1;
   wire [16-1:0] M_regfile_rd2;
   wire [1-1:0] M_regfile_z;
-  wire [4-1:0] M_regfile_debug_r0;
-  wire [4-1:0] M_regfile_debug_r1;
   reg [1-1:0] M_regfile_werf;
   reg [1-1:0] M_regfile_ra2sel;
   reg [16-1:0] M_regfile_write_data;
@@ -79,9 +76,7 @@ module prealpha_1 (
     .rc(M_regfile_rc),
     .rd1(M_regfile_rd1),
     .rd2(M_regfile_rd2),
-    .z(M_regfile_z),
-    .debug_r0(M_regfile_debug_r0),
-    .debug_r1(M_regfile_debug_r1)
+    .z(M_regfile_z)
   );
   
   wire [16-1:0] M_data_memory_read_data;
@@ -251,7 +246,5 @@ module prealpha_1 (
     player1 = M_input_printer_column1;
     turn[1+0-:1] = ~M_data_memory_turn_read;
     turn[0+0-:1] = M_data_memory_turn_read;
-    debug_read[4+3-:4] = M_regfile_debug_r0;
-    debug_read[0+3-:4] = M_regfile_debug_r1;
   end
 endmodule

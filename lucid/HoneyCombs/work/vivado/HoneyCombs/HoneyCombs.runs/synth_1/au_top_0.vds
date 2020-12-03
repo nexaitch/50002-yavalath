@@ -2,12 +2,12 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Dec  3 04:35:17 2020
-# Process ID: 12332
-# Current directory: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1
+# Start of session at: Thu Dec  3 06:09:48 2020
+# Process ID: 14596
+# Current directory: C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1
 # Command line: vivado.exe -log au_top_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
-# Log file: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.vds
-# Journal file: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1\vivado.jou
+# Log file: C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.vds
+# Journal file: C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source au_top_0.tcl -notrace
 Command: synth_design -top au_top_0 -part xc7a35tftg256-1
@@ -16,42 +16,42 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4388 
+INFO: Helper process launched with PID 7344 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 835.355 ; gain = 235.055
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 835.418 ; gain = 235.066
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/au_top_0.v:7]
-INFO: [Synth 8-6157] synthesizing module 'prealpha_1' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/prealpha_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'mux2_12' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux2_12.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'mux2_12' (1#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux2_12.v:7]
-INFO: [Synth 8-6157] synthesizing module 'pc_3' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_3.v:7]
-INFO: [Synth 8-6157] synthesizing module 'pc_incrementer_16_13' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_incrementer_16_13.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'pc_incrementer_16_13' (2#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_incrementer_16_13.v:7]
-INFO: [Synth 8-6157] synthesizing module 'adder16_14' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:7]
-INFO: [Synth 8-6157] synthesizing module 'full_adder_26' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/full_adder_26.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'full_adder_26' (3#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/full_adder_26.v:7]
-WARNING: [Synth 8-3936] Found unconnected internal register 'cout_reg' and it is trimmed from '16' to '15' bits. [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'adder16_14' (4#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'pc_3' (5#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_3.v:7]
-INFO: [Synth 8-6157] synthesizing module 'control_unit_4' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/control_unit_4.v:16]
+INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6157] synthesizing module 'prealpha_1' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/prealpha_1.v:7]
+INFO: [Synth 8-6157] synthesizing module 'mux2_12' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux2_12.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux2_12' (1#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux2_12.v:7]
+INFO: [Synth 8-6157] synthesizing module 'pc_3' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'pc_incrementer_16_13' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_incrementer_16_13.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'pc_incrementer_16_13' (2#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_incrementer_16_13.v:7]
+INFO: [Synth 8-6157] synthesizing module 'adder16_14' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:7]
+INFO: [Synth 8-6157] synthesizing module 'full_adder_26' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/full_adder_26.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'full_adder_26' (3#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/full_adder_26.v:7]
+WARNING: [Synth 8-3936] Found unconnected internal register 'cout_reg' and it is trimmed from '16' to '15' bits. [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'adder16_14' (4#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/adder16_14.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'pc_3' (5#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/pc_3.v:7]
+INFO: [Synth 8-6157] synthesizing module 'control_unit_4' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/control_unit_4.v:16]
 	Parameter ALUFN_NOOP bound to: 6'b000011 
 	Parameter ALUFN_AND bound to: 6'b000010 
 	Parameter ALUFN_SHL bound to: 6'b000001 
 	Parameter ALUFN_ADD bound to: 6'b000000 
 	Parameter ALUFN_SHRC bound to: 6'b100001 
 	Parameter CONTROL_SIG bound to: 192'b000000001100000000001100000000001100000000001100000000001100000000001100000000001100001010000101110000001100011000000010001100000001001000000001000000001001000000000101000000000001000000001100 
-INFO: [Synth 8-6155] done synthesizing module 'control_unit_4' (6#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/control_unit_4.v:16]
-INFO: [Synth 8-6157] synthesizing module 'instruction_memory_unit_5' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/instruction_memory_unit_5.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit_4' (6#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/control_unit_4.v:16]
+INFO: [Synth 8-6157] synthesizing module 'instruction_memory_unit_5' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/instruction_memory_unit_5.v:12]
 	Parameter DEPTH_LOG bound to: 4'b1001 
 	Parameter INSTR bound to: 8192'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111011111100000000001100010000100111000001001000001010000000011111101100010000100111000001001000001010000000011111101100010000100110100000000000010011111100000100101100010000100110001001001010000100001001000000100010010010100001000010001000001011111100000111101100010000100110100000000000001011000100001001101000000000000010110001000010011011101000000011001000100101111110111010000001110001101001010100010001011010001000100010111000011001100000010100001000001110011110001001110111000011111010111010001111111111100010100000000000001011111100000001000011100011110000001101101000000010010111100000001110010000001000011001001010000001001001001100001000111110000010101001001101001010101000010100101000010000000010111001000001101010000100011100101000001110000000111111111101001010000000000000101111110001100010110001000010011100000100100000101000000001111110110001000010011100000100100000101000000001111110110001000010011100000100100000101000000001111110110001000010011010000000000001101110010000011000011001001010000001001001001100001000111110000100101001001101001010101000010100101000010000000100111001000010101010000100011101001000001110000000111111111110100010000000000000101100010001010010011001001010000001000100101100001000111110000010101010010000000010100100100000001000100010000010001001100000000011100100000101001000010001110000100000111000000011111111111001101000000000000010111111000000010000111000111100000011011010000000100101111010000011100100000010000110010010100000010010001010000010001011100000101010010001010010111001000001011010000100011011101000001110000000111111111110001010000000000000101111110011001000110001000010011000100101000100010000100010000100001001010001000100001000100000101110010000001100011001001010000001001000101000001000101110000100101001000101001011100100000110101000010001101110100000111000000011111111111011001000000000000010110001000101001001100100101000000100100010100000100010111000001010100100100000000010011000000000111001000001000010000100011011101000001110000000111111111110011010000000000000101111110000000100001110001111000000110110100000001001011111000000111001000000100001100100101000001010010011010010101010000101001010000100000000101110010000010110100001000111001010000011100000001111111111011110100000000000001011111101000110101100010000100110100000000000001011000100001001101000000000000010110001000010011010000000000000101100010000100110111001000001000001100100101000001010010011010010101010000101001010000100000001001110010000011110100001000111010010000011100000001111111111101100100000000000001011000100010100100110010010100000101010010000000010100100100000001000100010000010001001100000000011100100000100001000010001110000100000111000000010011011100000001111111101110100111111000000001010010011100000101101000000000010001100100010000010110000000000101111110000001000100100111001010011010000000101000011001000100000101100000001010011101100000010101010111110111000010010010001000010001011100000101101110000100110111111111010101011101000000000100110100100110000101011000001010001001001000100001000101110000010111111111011011011101000000000100110100100110000101011000000001001001001000100001000101110000010111111111011110000100101111100000010000101110000110111000010011011110011110010100111001001010000101101010100000001010010001100001001001110000010111100111101010010010001111011101111001111011000100100011000001011110011110111001001000101101110111100111110000010010001000000101000110111111100100010010111110000101000001000000010110010110001000011011000010001101001001100001000101110000110110111111000000011101111111101001010111110000000111111000011011011011111101110101110100000000100101010111011101011001000001001100100100100010000100010111000001010000111100010001000001110001000110000111011100010000011100000101111110000000010100000111000000011100000000001001010001110111000110000111101000001100000000100001000011111100000110000111100111001100000000100001000011111110000110000111100110001100000000100001000011111111000110000111100101001100000000100001000011111111100110000111100100010000000000000100100000000010000110000111100011010000000000000100100000000010000110000111100010010000000000000100100000000010000110000111100001010000000000000100100000000010000110000111100000010000111100000101000001110111110111111111111001010000000000000101101110000100110110111000001010011011100000000101110010000001... (message truncated)
-INFO: [Synth 8-6155] done synthesizing module 'instruction_memory_unit_5' (7#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/instruction_memory_unit_5.v:12]
-INFO: [Synth 8-6157] synthesizing module 'regfile_6' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_6.v:7]
-INFO: [Synth 8-6157] synthesizing module 'regfile_base_15' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_base_15.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_memory_unit_5' (7#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/instruction_memory_unit_5.v:12]
+INFO: [Synth 8-6157] synthesizing module 'regfile_6' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regfile_base_15' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_base_15.v:4]
 	Parameter SIZE bound to: 16 - type: integer 
 	Parameter DEPTH bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'regfile_base_15' (8#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_base_15.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'regfile_6' (9#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_6.v:7]
-INFO: [Synth 8-6157] synthesizing module 'data_memory_7' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/data_memory_7.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_base_15' (8#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_base_15.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'regfile_6' (9#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/regfile_6.v:7]
+INFO: [Synth 8-6157] synthesizing module 'data_memory_7' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/data_memory_7.v:7]
 	Parameter SIZE bound to: 16 - type: integer 
 	Parameter DEPTH bound to: 64 - type: integer 
 	Parameter JOYSTICK_ADDR bound to: 0 - type: integer 
@@ -60,83 +60,83 @@ INFO: [Synth 8-6157] synthesizing module 'data_memory_7' [C:/Users/USER/Document
 	Parameter PLAYER1_START bound to: 10 - type: integer 
 	Parameter SELECTED_START bound to: 19 - type: integer 
 	Parameter TURN_ADDR bound to: 28 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'data_memory_7' (10#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/data_memory_7.v:5]
-INFO: [Synth 8-6157] synthesizing module 'alu_8' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/alu_8.v:7]
-INFO: [Synth 8-6157] synthesizing module 'mux4_18' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux4_18.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'mux4_18' (11#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux4_18.v:7]
-INFO: [Synth 8-6157] synthesizing module 'shifter16_16' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/shifter16_16.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'shifter16_16' (12#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/shifter16_16.v:7]
-INFO: [Synth 8-6157] synthesizing module 'and16_17' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/and16_17.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'and16_17' (13#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/and16_17.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'alu_8' (14#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/alu_8.v:7]
-INFO: [Synth 8-6157] synthesizing module 'joystick_regulator_9' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_regulator_9.v:7]
-INFO: [Synth 8-6157] synthesizing module 'input_regulator_19' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_19.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'data_memory_7' (10#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/data_memory_7.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alu_8' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/alu_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'mux4_18' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux4_18.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux4_18' (11#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/mux4_18.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shifter16_16' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/shifter16_16.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'shifter16_16' (12#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/shifter16_16.v:7]
+INFO: [Synth 8-6157] synthesizing module 'and16_17' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/and16_17.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'and16_17' (13#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/and16_17.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'alu_8' (14#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/alu_8.v:7]
+INFO: [Synth 8-6157] synthesizing module 'joystick_regulator_9' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_regulator_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_regulator_19' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_19.v:16]
 	Parameter INPUT_WIDTH bound to: 3'b100 
 	Parameter DATA_WIDTH bound to: 5'b10000 
 	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
 	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
 	Parameter INPUT_REFRESH_CYCLE_COUNT bound to: 26'b10111110101111000010000000 
 	Parameter INPUT_REFRESH_CYCLE_COUNT_OFFSET bound to: 27'b010111110101111000001111111 
-INFO: [Synth 8-6157] synthesizing module 'half_adder_28' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/half_adder_28.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'half_adder_28' (15#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/half_adder_28.v:7]
-INFO: [Synth 8-6157] synthesizing module 'input_conditioner_27' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_27.v:14]
+INFO: [Synth 8-6157] synthesizing module 'half_adder_28' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/half_adder_28.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'half_adder_28' (15#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/half_adder_28.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_conditioner_27' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_27.v:14]
 	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
 	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
 	Parameter DEBOUNCING_CYCLE_COUNT bound to: 25'b0100110001001011001111011 
 	Parameter WIDTH bound to: 3'b100 
-INFO: [Synth 8-6157] synthesizing module 'input_pipeline_30' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_pipeline_30.v:11]
+INFO: [Synth 8-6157] synthesizing module 'input_pipeline_30' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_pipeline_30.v:11]
 	Parameter DELAY_CYCLE_COUNT bound to: 3'b101 
-INFO: [Synth 8-6155] done synthesizing module 'input_pipeline_30' (16#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_pipeline_30.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'input_conditioner_27' (17#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_27.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'input_regulator_19' (18#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_19.v:16]
-INFO: [Synth 8-6157] synthesizing module 'joystick_mapper_20' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_mapper_20.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'input_pipeline_30' (16#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_pipeline_30.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'input_conditioner_27' (17#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_27.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'input_regulator_19' (18#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_19.v:16]
+INFO: [Synth 8-6157] synthesizing module 'joystick_mapper_20' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_mapper_20.v:11]
 	Parameter MAP bound to: 256'b0000000000000000000000000000000000000000000000000000000000001101000000000000000000000000000000000000000000001111000000000000111000000000000000000000000000000101000000000000000000000000000000000000000000000111000000000000011000000000000000000000000000000000 
-INFO: [Synth 8-6155] done synthesizing module 'joystick_mapper_20' (19#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_mapper_20.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'joystick_regulator_9' (20#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_regulator_9.v:7]
-INFO: [Synth 8-6157] synthesizing module 'button_regulator_10' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/button_regulator_10.v:7]
-INFO: [Synth 8-6157] synthesizing module 'input_regulator_21' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_21.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'joystick_mapper_20' (19#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_mapper_20.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'joystick_regulator_9' (20#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/joystick_regulator_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'button_regulator_10' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/button_regulator_10.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_regulator_21' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_21.v:16]
 	Parameter INPUT_WIDTH bound to: 1'b1 
 	Parameter DATA_WIDTH bound to: 5'b10000 
 	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
 	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
 	Parameter INPUT_REFRESH_CYCLE_COUNT bound to: 26'b10111110101111000010000000 
 	Parameter INPUT_REFRESH_CYCLE_COUNT_OFFSET bound to: 27'b010111110101111000001111111 
-INFO: [Synth 8-6157] synthesizing module 'input_conditioner_29' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_29.v:14]
+INFO: [Synth 8-6157] synthesizing module 'input_conditioner_29' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_29.v:14]
 	Parameter PIPELINE_CYCLE_COUNT bound to: 3'b101 
 	Parameter CONDITIONING_CYCLE_COUNT bound to: 24'b100110001001011010000000 
 	Parameter DEBOUNCING_CYCLE_COUNT bound to: 25'b0100110001001011001111011 
 	Parameter WIDTH bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'input_conditioner_29' (21#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_29.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'input_regulator_21' (22#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_21.v:16]
-INFO: [Synth 8-6157] synthesizing module 'buffer_22' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/buffer_22.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'buffer_22' (23#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/buffer_22.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'button_regulator_10' (24#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/button_regulator_10.v:7]
-INFO: [Synth 8-6157] synthesizing module 'input_printer_11' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_printer_11.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'input_conditioner_29' (21#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_conditioner_29.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'input_regulator_21' (22#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_regulator_21.v:16]
+INFO: [Synth 8-6157] synthesizing module 'buffer_22' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/buffer_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'buffer_22' (23#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/buffer_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'button_regulator_10' (24#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/button_regulator_10.v:7]
+INFO: [Synth 8-6157] synthesizing module 'input_printer_11' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_printer_11.v:13]
 	Parameter GRID_SIZE bound to: 4'b1001 
 	Parameter SPEED bound to: 4'b1010 
 	Parameter BLINK_SPEED bound to: 5'b11011 
-INFO: [Synth 8-6157] synthesizing module 'counter_23' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_23.v:14]
+INFO: [Synth 8-6157] synthesizing module 'counter_23' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_23.v:14]
 	Parameter SIZE bound to: 1'b1 
 	Parameter DIV bound to: 4'b1010 
 	Parameter TOP bound to: 1'b0 
 	Parameter UP bound to: 1'b1 
 	Parameter MAX_VALUE bound to: 11'b01111111111 
-INFO: [Synth 8-6155] done synthesizing module 'counter_23' (25#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_23.v:14]
-INFO: [Synth 8-6157] synthesizing module 'counter_24' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_24.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'counter_23' (25#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_23.v:14]
+INFO: [Synth 8-6157] synthesizing module 'counter_24' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_24.v:14]
 	Parameter SIZE bound to: 1'b1 
 	Parameter DIV bound to: 5'b11011 
 	Parameter TOP bound to: 1'b0 
 	Parameter UP bound to: 1'b1 
 	Parameter MAX_VALUE bound to: 28'b0111111111111111111111111111 
-INFO: [Synth 8-6155] done synthesizing module 'counter_24' (26#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_24.v:14]
-INFO: [Synth 8-6157] synthesizing module 'grid_selector_25' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/grid_selector_25.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'grid_selector_25' (27#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/grid_selector_25.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'input_printer_11' (28#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_printer_11.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'prealpha_1' (29#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/prealpha_1.v:7]
-INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_2' [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'counter_24' (26#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/counter_24.v:14]
+INFO: [Synth 8-6157] synthesizing module 'grid_selector_25' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/grid_selector_25.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'grid_selector_25' (27#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/grid_selector_25.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'input_printer_11' (28#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/input_printer_11.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'prealpha_1' (29#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/prealpha_1.v:7]
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_2' [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
 	Parameter STAGES bound to: 3'b100 
-INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_2' (30#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (31#1) [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_2' (30#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (31#1) [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.srcs/sources_1/imports/verilog/au_top_0.v:7]
 WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[4]
 WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[3]
 WARNING: [Synth 8-3331] design shifter16_16 has unconnected port alufn[2]
@@ -156,7 +156,7 @@ WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[5]
 WARNING: [Synth 8-3331] design shifter16_16 has unconnected port b[4]
 WARNING: [Synth 8-3331] design au_top_0 has unconnected port rst_n
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 910.898 ; gain = 310.598
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 910.512 ; gain = 310.160
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -169,49 +169,49 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 910.898 ; gain = 310.598
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 910.512 ; gain = 310.160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 910.898 ; gain = 310.598
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 910.512 ; gain = 310.160
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 910.898 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 910.512 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]
-Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/constraint/custom.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/constraint/custom.xdc]
+Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/constraint/custom.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/constraint/custom.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]
-Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/constraint/custom.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/constraint/custom.xdc]
+Finished Parsing XDC File [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/constraint/custom.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/constraint/custom.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1014.633 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1014.828 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1014.633 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1014.828 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.633 ; gain = 414.332
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1014.828 ; gain = 414.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.633 ; gain = 414.332
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1014.828 ; gain = 414.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1014.633 ; gain = 414.332
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1014.828 ; gain = 414.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1014.633 ; gain = 414.332
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1014.828 ; gain = 414.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -238,14 +238,14 @@ Detailed RTL Component Info :
 +---Registers : 
 	               26 Bit    Registers := 2     
 	               24 Bit    Registers := 2     
-	               16 Bit    Registers := 75    
+	               16 Bit    Registers := 67    
 	               11 Bit    Registers := 1     
 	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 74    
+	   2 Input      1 Bit        Muxes := 66    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -266,12 +266,6 @@ Module pc_3
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
-Module regfile_base_15 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 8     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 8     
 Module data_memory_7 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -449,7 +443,22 @@ INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_i
 INFO: [Synth 8-3886] merging instance 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[14]' (FD) to 'prealpha/joystick_regulator/regulator/M_input_tracker_q_reg[15]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (prealpha/joystick_regulator/\regulator/M_input_tracker_q_reg[15] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1014.633 ; gain = 414.332
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 1014.828 ; gain = 414.477
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++-----------------+------------------+-----------+----------------------+-------------+
+|Module Name      | RTL Object       | Inference | Size (Depth x Width) | Primitives  | 
++-----------------+------------------+-----------+----------------------+-------------+
+|prealpha/regfile | base_reg/mem_reg | Implied   | 8 x 16               | RAM32M x 6	 | 
++-----------------+------------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -461,13 +470,27 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1014.633 ; gain = 414.332
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 1014.828 ; gain = 414.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1052.195 ; gain = 451.895
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:52 . Memory (MB): peak = 1050.039 ; gain = 449.688
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++-----------------+------------------+-----------+----------------------+-------------+
+|Module Name      | RTL Object       | Inference | Size (Depth x Width) | Primitives  | 
++-----------------+------------------+-----------+----------------------+-------------+
+|prealpha/regfile | base_reg/mem_reg | Implied   | 8 x 16               | RAM32M x 6	 | 
++-----------------+------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -479,7 +502,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1073.105 ; gain = 472.805
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:54 . Memory (MB): peak = 1065.160 ; gain = 464.809
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -503,13 +526,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -528,25 +551,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -581,101 +604,102 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |     7|
 |3     |LUT1   |     8|
-|4     |LUT2   |    79|
-|5     |LUT3   |    69|
-|6     |LUT4   |   166|
-|7     |LUT5   |   184|
-|8     |LUT6   |   740|
-|9     |MUXF7  |   139|
-|10    |MUXF8  |     4|
-|11    |SRL16E |     6|
-|12    |FDRE   |  1324|
-|13    |IBUF   |     7|
-|14    |OBUF   |    38|
+|4     |LUT2   |    54|
+|5     |LUT3   |    52|
+|6     |LUT4   |   124|
+|7     |LUT5   |   119|
+|8     |LUT6   |   700|
+|9     |MUXF7  |   217|
+|10    |MUXF8  |     8|
+|11    |RAM32M |     6|
+|12    |SRL16E |     6|
+|13    |FDRE   |  1196|
+|14    |IBUF   |     7|
+|15    |OBUF   |    30|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------------------------------------+--------------------------+------+
 |      |Instance                               |Module                    |Cells |
 +------+---------------------------------------+--------------------------+------+
-|1     |top                                    |                          |  2772|
-|2     |  prealpha                             |prealpha_1                |  2724|
+|1     |top                                    |                          |  2535|
+|2     |  prealpha                             |prealpha_1                |  2495|
 |3     |    \bsel_mux_gen_0[0].bsel_mux        |mux2_12                   |     1|
-|4     |    \bsel_mux_gen_0[1].bsel_mux        |mux2_12_6                 |     1|
-|5     |    \bsel_mux_gen_0[2].bsel_mux        |mux2_12_7                 |     1|
-|6     |    \bsel_mux_gen_0[3].bsel_mux        |mux2_12_8                 |     1|
-|7     |    \bsel_mux_gen_0[4].bsel_mux        |mux2_12_9                 |     1|
-|8     |    \wdsel_mux_gen_0[0].wdsel_mux      |mux2_12_15                |     1|
-|9     |    \wdsel_mux_gen_0[10].wdsel_mux     |mux2_12_16                |     1|
-|10    |    \wdsel_mux_gen_0[11].wdsel_mux     |mux2_12_17                |     1|
-|11    |    \wdsel_mux_gen_0[12].wdsel_mux     |mux2_12_18                |     1|
-|12    |    \wdsel_mux_gen_0[13].wdsel_mux     |mux2_12_19                |     1|
-|13    |    \wdsel_mux_gen_0[14].wdsel_mux     |mux2_12_20                |     1|
-|14    |    \wdsel_mux_gen_0[15].wdsel_mux     |mux2_12_21                |     1|
-|15    |    \wdsel_mux_gen_0[1].wdsel_mux      |mux2_12_22                |     1|
-|16    |    \wdsel_mux_gen_0[2].wdsel_mux      |mux2_12_23                |     1|
-|17    |    \wdsel_mux_gen_0[3].wdsel_mux      |mux2_12_24                |     1|
-|18    |    \wdsel_mux_gen_0[4].wdsel_mux      |mux2_12_25                |     1|
-|19    |    \wdsel_mux_gen_0[5].wdsel_mux      |mux2_12_26                |     1|
-|20    |    \wdsel_mux_gen_0[6].wdsel_mux      |mux2_12_27                |     1|
-|21    |    \wdsel_mux_gen_0[7].wdsel_mux      |mux2_12_28                |     1|
-|22    |    \wdsel_mux_gen_0[9].wdsel_mux      |mux2_12_30                |     1|
-|23    |    \bsel_mux_gen_0[10].bsel_mux       |mux2_12_0                 |     1|
-|24    |    \bsel_mux_gen_0[11].bsel_mux       |mux2_12_1                 |     1|
-|25    |    \bsel_mux_gen_0[12].bsel_mux       |mux2_12_2                 |     1|
-|26    |    \bsel_mux_gen_0[13].bsel_mux       |mux2_12_3                 |     1|
-|27    |    \bsel_mux_gen_0[14].bsel_mux       |mux2_12_4                 |     1|
-|28    |    \bsel_mux_gen_0[15].bsel_mux       |mux2_12_5                 |     1|
-|29    |    \bsel_mux_gen_0[5].bsel_mux        |mux2_12_10                |     1|
-|30    |    \bsel_mux_gen_0[6].bsel_mux        |mux2_12_11                |     1|
-|31    |    \bsel_mux_gen_0[7].bsel_mux        |mux2_12_12                |     1|
-|32    |    \bsel_mux_gen_0[8].bsel_mux        |mux2_12_13                |     1|
-|33    |    \bsel_mux_gen_0[9].bsel_mux        |mux2_12_14                |     1|
-|34    |    button_regulator                   |button_regulator_10       |   148|
-|35    |      regulator                        |input_regulator_21        |   148|
-|36    |        conditioner                    |input_conditioner_29      |   101|
-|37    |          \pipeline_gen_0[0].pipeline  |input_pipeline_30_34      |    28|
-|38    |    data_memory                        |data_memory_7             |  1474|
+|4     |    \bsel_mux_gen_0[1].bsel_mux        |mux2_12_5                 |     1|
+|5     |    \bsel_mux_gen_0[2].bsel_mux        |mux2_12_6                 |     1|
+|6     |    \bsel_mux_gen_0[3].bsel_mux        |mux2_12_7                 |     1|
+|7     |    \bsel_mux_gen_0[4].bsel_mux        |mux2_12_8                 |     1|
+|8     |    \wdsel_mux_gen_0[0].wdsel_mux      |mux2_12_14                |     1|
+|9     |    \wdsel_mux_gen_0[10].wdsel_mux     |mux2_12_15                |     1|
+|10    |    \wdsel_mux_gen_0[11].wdsel_mux     |mux2_12_16                |     1|
+|11    |    \wdsel_mux_gen_0[12].wdsel_mux     |mux2_12_17                |     1|
+|12    |    \wdsel_mux_gen_0[13].wdsel_mux     |mux2_12_18                |     1|
+|13    |    \wdsel_mux_gen_0[14].wdsel_mux     |mux2_12_19                |     1|
+|14    |    \wdsel_mux_gen_0[15].wdsel_mux     |mux2_12_20                |     1|
+|15    |    \wdsel_mux_gen_0[1].wdsel_mux      |mux2_12_21                |     1|
+|16    |    \wdsel_mux_gen_0[2].wdsel_mux      |mux2_12_22                |     1|
+|17    |    \wdsel_mux_gen_0[3].wdsel_mux      |mux2_12_23                |     1|
+|18    |    \wdsel_mux_gen_0[4].wdsel_mux      |mux2_12_24                |     1|
+|19    |    \wdsel_mux_gen_0[5].wdsel_mux      |mux2_12_25                |     1|
+|20    |    \wdsel_mux_gen_0[6].wdsel_mux      |mux2_12_26                |     1|
+|21    |    \wdsel_mux_gen_0[7].wdsel_mux      |mux2_12_27                |     1|
+|22    |    \wdsel_mux_gen_0[8].wdsel_mux      |mux2_12_28                |     1|
+|23    |    \wdsel_mux_gen_0[9].wdsel_mux      |mux2_12_29                |     1|
+|24    |    \bsel_mux_gen_0[10].bsel_mux       |mux2_12_0                 |     1|
+|25    |    \bsel_mux_gen_0[11].bsel_mux       |mux2_12_1                 |     1|
+|26    |    \bsel_mux_gen_0[12].bsel_mux       |mux2_12_2                 |     1|
+|27    |    \bsel_mux_gen_0[13].bsel_mux       |mux2_12_3                 |     1|
+|28    |    \bsel_mux_gen_0[14].bsel_mux       |mux2_12_4                 |     1|
+|29    |    \bsel_mux_gen_0[5].bsel_mux        |mux2_12_9                 |     1|
+|30    |    \bsel_mux_gen_0[6].bsel_mux        |mux2_12_10                |     1|
+|31    |    \bsel_mux_gen_0[7].bsel_mux        |mux2_12_11                |     1|
+|32    |    \bsel_mux_gen_0[8].bsel_mux        |mux2_12_12                |     1|
+|33    |    \bsel_mux_gen_0[9].bsel_mux        |mux2_12_13                |     1|
+|34    |    button_regulator                   |button_regulator_10       |   163|
+|35    |      regulator                        |input_regulator_21        |   163|
+|36    |        conditioner                    |input_conditioner_29      |   116|
+|37    |          \pipeline_gen_0[0].pipeline  |input_pipeline_30_33      |    28|
+|38    |    data_memory                        |data_memory_7             |  1534|
 |39    |    input_printer                      |input_printer_11          |   106|
 |40    |      blink_slowclock                  |counter_24                |    63|
 |41    |      slowclock                        |counter_23                |    23|
-|42    |    instr_mem_unit                     |instruction_memory_unit_5 |   212|
-|43    |    joystick_regulator                 |joystick_regulator_9      |   168|
-|44    |      regulator                        |input_regulator_19        |   168|
-|45    |        conditioner                    |input_conditioner_27      |   103|
+|42    |    instr_mem_unit                     |instruction_memory_unit_5 |   213|
+|43    |    joystick_regulator                 |joystick_regulator_9      |   181|
+|44    |      regulator                        |input_regulator_19        |   181|
+|45    |        conditioner                    |input_conditioner_27      |   116|
 |46    |          \pipeline_gen_0[0].pipeline  |input_pipeline_30         |     3|
-|47    |          \pipeline_gen_0[1].pipeline  |input_pipeline_30_31      |     5|
-|48    |          \pipeline_gen_0[2].pipeline  |input_pipeline_30_32      |     4|
-|49    |          \pipeline_gen_0[3].pipeline  |input_pipeline_30_33      |     3|
-|50    |    pc                                 |pc_3                      |   441|
-|51    |    regfile                            |regfile_6                 |   143|
-|52    |      base_reg                         |regfile_base_15           |   143|
-|53    |    \wdsel_mux_gen_0[8].wdsel_mux      |mux2_12_29                |     1|
-|54    |  reset_cond                           |reset_conditioner_2       |     2|
+|47    |          \pipeline_gen_0[1].pipeline  |input_pipeline_30_30      |     5|
+|48    |          \pipeline_gen_0[2].pipeline  |input_pipeline_30_31      |     4|
+|49    |          \pipeline_gen_0[3].pipeline  |input_pipeline_30_32      |     3|
+|50    |    pc                                 |pc_3                      |   215|
+|51    |    regfile                            |regfile_6                 |    52|
+|52    |      base_reg                         |regfile_base_15           |    52|
+|53    |  reset_cond                           |reset_conditioner_2       |     2|
 +------+---------------------------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 193 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:49 . Memory (MB): peak = 1078.562 ; gain = 374.527
-Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1078.562 ; gain = 478.262
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:54 . Memory (MB): peak = 1069.648 ; gain = 364.980
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1069.648 ; gain = 469.297
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1090.633 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 150 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1069.648 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 238 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1090.633 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1069.648 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 6 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
 88 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1090.633 ; gain = 785.641
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1090.633 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:10 . Memory (MB): peak = 1069.648 ; gain = 763.992
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1069.648 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  3 04:36:24 2020...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  3 06:11:08 2020...

@@ -14,17 +14,13 @@ module regfile_6 (
     input [2:0] rc,
     output reg [15:0] rd1,
     output reg [15:0] rd2,
-    output reg z,
-    output reg [3:0] debug_r0,
-    output reg [3:0] debug_r1
+    output reg z
   );
   
   
   
   wire [16-1:0] M_base_reg_read_data0;
   wire [16-1:0] M_base_reg_read_data1;
-  wire [16-1:0] M_base_reg_debug_r0;
-  wire [16-1:0] M_base_reg_debug_r1;
   reg [3-1:0] M_base_reg_waddr;
   reg [16-1:0] M_base_reg_write_data;
   reg [1-1:0] M_base_reg_write_en;
@@ -38,9 +34,7 @@ module regfile_6 (
     .raddr0(M_base_reg_raddr0),
     .raddr1(M_base_reg_raddr1),
     .read_data0(M_base_reg_read_data0),
-    .read_data1(M_base_reg_read_data1),
-    .debug_r0(M_base_reg_debug_r0),
-    .debug_r1(M_base_reg_debug_r1)
+    .read_data1(M_base_reg_read_data1)
   );
   
   wire [(2'h3+0)-1:0] M_ra2sel_mux_out;
@@ -110,7 +104,5 @@ module regfile_6 (
     rd1 = M_rd1_select_out;
     rd2 = M_rd2_select_out;
     z = (~|(M_rd2_select_out));
-    debug_r0 = M_base_reg_debug_r0[0+3-:4];
-    debug_r1 = M_base_reg_debug_r1[0+3-:4];
   end
 endmodule

@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Dec  3 04:35:17 2020
-# Process ID: 12332
-# Current directory: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1
+# Start of session at: Thu Dec  3 06:09:48 2020
+# Process ID: 14596
+# Current directory: C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1
 # Command line: vivado.exe -log au_top_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
-# Log file: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.vds
-# Journal file: C:/Users/USER/Documents/GitHub/naffins/50.002-HoneyCombs/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1\vivado.jou
+# Log file: C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1/au_top_0.vds
+# Journal file: C:/Users/USER/Documents/GitHub/naffins/50002-yavalath/lucid/HoneyCombs/work/vivado/HoneyCombs/HoneyCombs.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source au_top_0.tcl -notrace
